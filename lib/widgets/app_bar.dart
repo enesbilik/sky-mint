@@ -1,5 +1,7 @@
 // ignore_for_file: use_key_in_widget_constructors
 
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:sky_mint/constants/colors.dart';
 
@@ -15,6 +17,7 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
       title: const Text(
         "Yıldızın\nSosyal Medyası",
         textAlign: TextAlign.center,
+        style: TextStyle(fontFamily: "Pattaya"),
       ),
       actions: [
         buildActionButton(Icons.notifications_none, () {}),
