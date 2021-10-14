@@ -17,7 +17,7 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
       title: const Text(
         "Yıldızın\nSosyal Medyası",
         textAlign: TextAlign.center,
-        style: TextStyle(fontFamily: "Pattaya"),
+        style: TextStyle(fontFamily: "Pattaya",color: softwhiteColor),
       ),
       actions: [
         buildActionButton(Icons.notifications_none, () {}),
@@ -31,7 +31,7 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
       onPressed: () => onClick,
       icon: Icon(
         icon,
-        color: Colors.white,
+        color: softwhiteColor,
       ),
     );
   }

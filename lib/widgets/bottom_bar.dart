@@ -39,7 +39,7 @@ class _MyBottomBarState extends State<MyBottomBar> {
         icon: Icon(
           icon,
           size: _currentTab == tab ? iconSize + 2 : iconSize,
-          color: _currentTab == tab ? Colors.white : Colors.white54,
+          color: _currentTab == tab ? softwhiteColor : Colors.white54,
         ));
   }
 
