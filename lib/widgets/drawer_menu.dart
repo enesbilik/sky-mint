@@ -4,6 +4,7 @@
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:sky_mint/constants/colors.dart';
 
 class MyDrawerMenu extends StatelessWidget {
   @override
@@ -14,7 +15,14 @@ class MyDrawerMenu extends StatelessWidget {
         child: ListView(
           padding: const EdgeInsets.all(16.0),
           children: const [
-            UserAccountsDrawerHeader(
+            CircleAvatar(
+                radius: 70,
+              backgroundColor: softwhiteColor,
+              child: CircleAvatar(
+                radius: 60,
+                backgroundImage: AssetImage("assets/eg1.png"),
+            ),),
+          /*  UserAccountsDrawerHeader(
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
                 image: DecorationImage(
@@ -24,13 +32,14 @@ class MyDrawerMenu extends StatelessWidget {
                 ),
                 //borderRadius: BorderRadius.all(Radius.circular(500)),
               ),
+              
               accountName: Text(
                 "",
               ),
               accountEmail: Text(
                 "",
               ),
-            ),
+            ),*/
             ListTile(
               title: Text(
                 "Sky-Mint",
