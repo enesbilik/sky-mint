@@ -14,15 +14,18 @@ class MyDrawerMenu extends StatelessWidget {
       child: Drawer(
         child: ListView(
           padding: const EdgeInsets.all(16.0),
-          children: const [
-            CircleAvatar(
-                radius: 70,
-              backgroundColor: softwhiteColor,
+          children: [
+            const SafeArea(
               child: CircleAvatar(
-                radius: 60,
-                backgroundImage: AssetImage("assets/eg1.png"),
-            ),),
-          /*  UserAccountsDrawerHeader(
+                radius: 70,
+                backgroundColor: softwhiteColor,
+                child: CircleAvatar(
+                  radius: 60,
+                  backgroundImage: AssetImage("assets/eg1.png"),
+                ),
+              ),
+            ),
+            /*  UserAccountsDrawerHeader(
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
                 image: DecorationImage(
@@ -41,6 +44,7 @@ class MyDrawerMenu extends StatelessWidget {
               ),
             ),*/
             ListTile(
+              onTap: () {},
               title: Text(
                 "Sky-Mint",
                 style: TextStyle(fontWeight: FontWeight.bold),
@@ -51,38 +55,42 @@ class MyDrawerMenu extends StatelessWidget {
               ),
             ),
             ListTile(
+              onTap: () {},
               leading: Icon(
                 Icons.person_sharp,
-                size: 30,
+                size: 28,
               ),
               title: Text(
                 "Kullanıcı Profili",
                 style: TextStyle(
-                  fontSize: 20,
+                  fontSize: 16,
                 ),
               ),
             ),
             ListTile(
+              onTap: () {},
               leading: Icon(
                 Icons.settings,
-                size: 30,
+                size: 28,
               ),
               title: Text(
                 "Ayarlar",
                 style: TextStyle(
-                  fontSize: 20,
+                  fontSize: 16,
                 ),
               ),
             ),
+            Divider(),
             ListTile(
+              onTap: () {},
               leading: Icon(
                 Icons.power_settings_new_outlined,
-                size: 30,
+                size: 28,
               ),
               title: Text(
                 "Çıkış Yap",
                 style: TextStyle(
-                  fontSize: 20,
+                  fontSize: 16,
                 ),
               ),
             )
