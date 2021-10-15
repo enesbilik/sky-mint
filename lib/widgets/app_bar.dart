@@ -21,8 +21,8 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
         style: TextStyle(fontFamily: "Pattaya", color: softwhiteColor),
       ),
       actions: [
-        buildActionButton(Icons.notifications_none, 32, () {}),
-        buildActionButton(Icons.messenger_outline_sharp, 30, () {
+        buildActionButton(Icons.notifications_none, 28, () {}),
+        buildActionButton(Icons.messenger_outline_sharp, 26, () {
           Navigator.push(
               context, MaterialPageRoute(builder: (context) => MessagePage()));
         }),
