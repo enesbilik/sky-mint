@@ -4,6 +4,7 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:sky_mint/constants/colors.dart';
+import 'package:sky_mint/view/direct_message/message_page.dart';
 
 class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
@@ -17,22 +18,25 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
       title: const Text(
         "Yıldızın\nSosyal Medyası",
         textAlign: TextAlign.center,
-        style: TextStyle(fontFamily: "Pattaya",color: softwhiteColor),
+        style: TextStyle(fontFamily: "Pattaya", color: softwhiteColor),
       ),
       actions: [
         buildActionButton(Icons.notifications_none, () {}),
-        buildActionButton(Icons.messenger_outline_sharp, () {}),
+        buildActionButton(Icons.messenger_outline_sharp, () {
+          Navigator.push(
+              context, MaterialPageRoute(builder: (context) => MessagePage()));
+        }),
       ],
     );
   }
+}
 
-  Widget buildActionButton(IconData icon, Function onClick) {
-    return IconButton(
-      onPressed: () => onClick,
-      icon: Icon(
-        icon,
-        color: softwhiteColor,
-      ),
-    );
-  }
+Widget buildActionButton(IconData icon, Function onClick) {
+  return IconButton(
+    onPressed: () => onClick(),
+    icon: Icon(
+      icon,
+      color: softwhiteColor,
+    ),
+  );
 }

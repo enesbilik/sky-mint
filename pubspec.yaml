@@ -90,6 +90,7 @@ flutter:
 
   assets:
     - assets/images/post_images/
+    - assets/profiles/
     - assets/yes.jpg
     - assets/eg1.png
     - assets/eg2.png

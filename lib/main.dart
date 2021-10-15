@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sky_mint/view/direct_message/message_page.dart';
 import 'view/main_page.dart';
 
 void main() {
