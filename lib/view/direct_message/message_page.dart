@@ -4,6 +4,8 @@ import 'package:sky_mint/models/user_model.dart';
 import 'package:sky_mint/widgets/app_bar.dart';
 
 class MessagePage extends StatefulWidget {
+  const MessagePage({Key? key}) : super(key: key);
+
   @override
   State<MessagePage> createState() => _MessagePageState();
 }
@@ -101,8 +103,8 @@ class _MessagePageState extends State<MessagePage> {
         style: TextStyle(fontFamily: "Pattaya", color: softwhiteColor),
       ),
       actions: [
-        buildActionButton(Icons.search, () {}),
-        buildActionButton(Icons.more_vert, () {}),
+        buildActionButton(Icons.search, 26, () {}),
+        buildActionButton(Icons.more_vert, 26, () {}),
       ],
     );
   }

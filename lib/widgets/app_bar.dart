@@ -21,8 +21,8 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
         style: TextStyle(fontFamily: "Pattaya", color: softwhiteColor),
       ),
       actions: [
-        buildActionButton(Icons.notifications_none, () {}),
-        buildActionButton(Icons.messenger_outline_sharp, () {
+        buildActionButton(Icons.notifications_none, 32, () {}),
+        buildActionButton(Icons.messenger_outline_sharp, 30, () {
           Navigator.push(
               context, MaterialPageRoute(builder: (context) => MessagePage()));
         }),
@@ -31,12 +31,17 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
   }
 }
 
-Widget buildActionButton(IconData icon, Function onClick) {
+Widget buildActionButton(
+  IconData icon,
+  double iconSize,
+  Function onClick,
+) {
   return IconButton(
     onPressed: () => onClick(),
     icon: Icon(
       icon,
       color: softwhiteColor,
+      size: iconSize,
     ),
   );
 }

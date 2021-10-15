@@ -43,6 +43,7 @@ class _HomePageState extends State<HomePage> {
 
   Widget buildPostItem(int index) {
     String _imageUrl = "assets/images/post_images/post_image$index.jpeg";
+
     return Column(
       // ignore: prefer_const_literals_to_create_immutables
       children: [
