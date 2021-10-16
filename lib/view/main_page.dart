@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sky_mint/constants/colors.dart';
 import 'package:sky_mint/view/home_page.dart';
+import 'package:sky_mint/view/map_page.dart';
 import 'package:sky_mint/widgets/app_bar.dart';
 import 'package:sky_mint/widgets/drawer_menu.dart';
 
@@ -58,6 +59,9 @@ class _MainPageState extends State<MainPage> {
   getCurrentPage() {
     if (_currentTab == 2) {
       return HomePage();
+    }
+    if (_currentTab == 4) {
+      return MapPage();
     }
   }
 }
