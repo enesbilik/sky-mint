@@ -1,6 +1,7 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:sky_mint/constants/colors.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -48,12 +49,14 @@ class _HomePageState extends State<HomePage> {
       // ignore: prefer_const_literals_to_create_immutables
       children: [
         ListTile(
+          tileColor: softwhiteColor,
           title: Text(
             listOfPostName[index],
-            style: TextStyle(fontWeight: FontWeight.bold),
+            style: TextStyle(color: darkColor,fontFamily: "Pattaya"),
           ),
           subtitle: Text(
             listOfPostName[index],
+            style: TextStyle(color: kPrimaryColor,fontFamily: "Pattaya"),
           ),
           leading: CircleAvatar(
             backgroundImage: AssetImage(_imageUrl),
@@ -61,7 +64,7 @@ class _HomePageState extends State<HomePage> {
           trailing: IconButton(
             padding: EdgeInsets.zero,
             constraints: BoxConstraints(),
-            icon: Icon(Icons.more_vert),
+            icon: Icon(Icons.more_vert,color: darkColor,),
             onPressed: () {},
           ),
         ),
@@ -70,45 +73,54 @@ class _HomePageState extends State<HomePage> {
           width: double.infinity,
           fit: BoxFit.contain,
         ),
-        Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 10.0, vertical: 4),
-          child: Row(
-            children: [
-              IconButton(
-                onPressed: () {},
-                icon: Icon(
-                  index % 2 == 0 ? Icons.star_border : Icons.star_outlined,
-                  size: 32,
+        Container(
+          color: softwhiteColor,
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 10.0, vertical: 4),
+            child: Row(
+              children: [
+                IconButton(
+                  onPressed: () {},
+                  icon: Icon(
+                    index % 2 == 0 ? Icons.star_border : Icons.star_outlined,
+                    size: 32,
+                    color: darkColor,
+                  ),
                 ),
-              ),
-              IconButton(
-                onPressed: () {},
-                icon: Icon(
-                  Icons.messenger_outline,
-                  size: 28,
+                IconButton(
+                  onPressed: () {},
+                  icon: Icon(
+                    Icons.messenger_outline,
+                    size: 28,
+                    color: darkColor,
+                  ),
                 ),
-              ),
-              IconButton(
-                onPressed: () {},
-                icon: Icon(
-                  Icons.send,
-                  size: 28,
+                IconButton(
+                  onPressed: () {},
+                  icon: Icon(
+                    Icons.send,
+                    size: 28,
+                    color: darkColor,
+                  ),
                 ),
-              ),
-              Spacer(),
-              IconButton(
-                onPressed: () {},
-                icon: Icon(
-                  Icons.arrow_drop_down_circle_outlined,
-                  size: 32,
+                Spacer(),
+                IconButton(
+                  onPressed: () {},
+                  icon: Icon(
+                    Icons.arrow_drop_down_circle_outlined,
+                    size: 32,
+                    color: darkColor,
+                  ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
-        Divider(
-          thickness: 0.3,
-        ),
+      Divider(
+                thickness: 0.2,
+                height: 0.2,
+                color: darkColor,
+              ),
       ],
     );
   }

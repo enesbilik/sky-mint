@@ -10,91 +10,121 @@ class MyDrawerMenu extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ClipRRect(
-      borderRadius: const BorderRadius.only(topRight: Radius.circular(100)),
+      borderRadius: const BorderRadius.only(
+          topRight: Radius.elliptical(70, 200), //bottomRight: Radius.elliptical(70, 200)
+          ),
       child: Drawer(
-        child: ListView(
-          padding: const EdgeInsets.all(16.0),
-          children: [
-            const SafeArea(
-              child: CircleAvatar(
-                radius: 70,
-                backgroundColor: softwhiteColor,
+        child: Container(/*decoration: BoxDecoration(
+        gradient: LinearGradient(
+          colors: [lineargradient1, lineargradient2],
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+        ),
+      ),*/
+      color: darkColor,
+          child: ListView(
+            padding: const EdgeInsets.all(16.0),
+            children: [
+              const SafeArea(
                 child: CircleAvatar(
-                  radius: 60,
-                  backgroundImage: AssetImage("assets/eg1.png"),
+                  radius: 55,
+                  backgroundColor: softwhiteColor,
+                  child: CircleAvatar(
+                    radius: 50,
+                    backgroundImage: AssetImage("assets/eg1.png"),
+                  ),
                 ),
               ),
-            ),
-            /*  UserAccountsDrawerHeader(
-              decoration: BoxDecoration(
-                shape: BoxShape.circle,
-                image: DecorationImage(
-                  image: AssetImage("assets/eg1.png"),
-                  fit: BoxFit.scaleDown,
-                  scale: 0.5,
+              /*  UserAccountsDrawerHeader(
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  image: DecorationImage(
+                    image: AssetImage("assets/eg1.png"),
+                    fit: BoxFit.scaleDown,
+                    scale: 0.5,
+                  ),
+                  //borderRadius: BorderRadius.all(Radius.circular(500)),
                 ),
-                //borderRadius: BorderRadius.all(Radius.circular(500)),
-              ),
-              
-              accountName: Text(
-                "",
-              ),
-              accountEmail: Text(
-                "",
-              ),
-            ),*/
-            ListTile(
-              onTap: () {},
-              title: Text(
-                "Sky-Mint",
-                style: TextStyle(fontWeight: FontWeight.bold),
-              ),
-              subtitle: Text(
-                "mint@skylab.com",
-                style: TextStyle(fontWeight: FontWeight.bold),
-              ),
-            ),
-            ListTile(
-              onTap: () {},
-              leading: Icon(
-                Icons.person_sharp,
-                size: 28,
-              ),
-              title: Text(
-                "Kullanıcı Profili",
-                style: TextStyle(
-                  fontSize: 16,
+                
+                accountName: Text(
+                  "",
+                ),
+                accountEmail: Text(
+                  "",
+                ),
+              ),*/
+              ListTile(
+                onTap: () {},
+                title: Text(
+                  "Sky-Mint",
+                  style: TextStyle(
+                      color: softwhiteColor,
+                      fontFamily: "Pattaya",
+                      fontSize: 18),
+                ),
+                subtitle: Text(
+                  "mint@skylab.com",
+                  style: TextStyle(
+                      color: softwhiteColor,
+                      fontFamily: "Pattaya",
+                      fontSize: 16),
                 ),
               ),
-            ),
-            ListTile(
-              onTap: () {},
-              leading: Icon(
-                Icons.settings,
-                size: 28,
+              Divider(
+                color: softwhiteColor,
               ),
-              title: Text(
-                "Ayarlar",
-                style: TextStyle(
-                  fontSize: 16,
+              ListTile(
+                onTap: () {},
+                leading: Icon(
+                  Icons.person_sharp,
+                  size: 28,
+                  color: softwhiteColor,
+                ),
+                title: Text(
+                  "Kullanıcı Profili",
+                  style: TextStyle(
+                    fontSize: 18,
+                    fontFamily: "Pattaya",
+                    color: softwhiteColor,
+                  ),
                 ),
               ),
-            ),
-            Divider(),
-            ListTile(
-              onTap: () {},
-              leading: Icon(
-                Icons.power_settings_new_outlined,
-                size: 28,
-              ),
-              title: Text(
-                "Çıkış Yap",
-                style: TextStyle(
-                  fontSize: 16,
+              //Divider(color: softwhiteColor,),
+              ListTile(
+                onTap: () {},
+                leading: Icon(
+                  Icons.settings,
+                  size: 28,
+                  color: softwhiteColor,
+                ),
+                title: Text(
+                  "Ayarlar",
+                  style: TextStyle(
+                    fontSize: 18,
+                    fontFamily: "Pattaya",
+                    color: softwhiteColor,
+                  ),
                 ),
               ),
-            )
-          ],
+              // Divider(color: softwhiteColor,),
+              ListTile(
+                onTap: () {},
+                leading: Icon(
+                  Icons.power_settings_new_outlined,
+                  size: 28,
+                  color: softwhiteColor,
+                ),
+                title: Text(
+                  "Çıkış Yap",
+                  style: TextStyle(
+                    fontSize: 18,
+                    fontFamily: "Pattaya",
+                    color: softwhiteColor,
+                  ),
+                ),
+              )
+            ],
+          ),
         ),
       ),
     );

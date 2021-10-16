@@ -17,7 +17,7 @@ class _MessagePageState extends State<MessagePage> {
         appBar: buildAppBar(),
         body: buildBody(),
         floatingActionButton: FloatingActionButton(
-          backgroundColor: kPrimaryColor,
+          backgroundColor: darkColor,
           onPressed: () {},
           child: Icon(Icons.message_rounded),
         ));
@@ -29,7 +29,7 @@ class _MessagePageState extends State<MessagePage> {
       itemBuilder: (BuildContext context, int index) {
         return ListTile(
           leading: buildProfilePhoto(index),
-          title: Text(listOfUser[index].name),
+          title: Text(listOfUser[index].name,style: TextStyle(fontFamily: "Pattaya"),),
           subtitle: buildSubtitle(index),
           trailing: buildTrailing(index),
           onTap: () {},
@@ -55,7 +55,10 @@ class _MessagePageState extends State<MessagePage> {
         SizedBox(
           width: 2,
         ),
-        Text(listOfUser[index].lastMessage),
+        Text(
+          listOfUser[index].lastMessage,
+          style: TextStyle(fontFamily: "Pattaya", fontSize: 15),
+        ),
       ],
     );
   }
@@ -67,7 +70,8 @@ class _MessagePageState extends State<MessagePage> {
       children: [
         Text(
           listOfUser[index].lastMessageTime,
-          style: TextStyle(fontSize: 12, color: Colors.black87),
+          style: TextStyle(
+              fontSize: 14, color: Colors.black87, fontFamily: "Pattaya"),
         ),
         SizedBox(
           height: 1,
@@ -79,7 +83,8 @@ class _MessagePageState extends State<MessagePage> {
             child: Center(
               child: Text(
                 "${listOfUser[index].lastNumberOfMessage}",
-                style: TextStyle(color: Colors.white, fontSize: 12),
+                style: TextStyle(
+                    color: Colors.white, fontSize: 12, fontFamily: "Pattaya"),
               ),
             ),
             width: 20,
@@ -96,7 +101,7 @@ class _MessagePageState extends State<MessagePage> {
   AppBar buildAppBar() {
     return AppBar(
       centerTitle: false,
-      backgroundColor: kPrimaryColor,
+      backgroundColor: darkColor,
       title: const Text(
         "Yıldız Mesaj",
         textAlign: TextAlign.center,

@@ -26,17 +26,26 @@ class _MainPageState extends State<MainPage> {
   }
 
   Widget buildBottomBar() {
-    return BottomAppBar(
-      color: kPrimaryColor,
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: [
-          buildBottomIcon(Icons.calendar_today, 26, 0),
-          buildBottomIcon(Icons.search, 32, 1),
-          buildBottomIcon(Icons.home, 32, 2),
-          buildBottomIcon(Icons.info_outline, 28, 3),
-          buildBottomIcon(Icons.location_on_outlined, 32, 4),
-        ],
+    return Container(/*
+      decoration: BoxDecoration(
+        gradient: LinearGradient(
+          colors: [lineargradient1, lineargradient2],
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+        ),
+      ),*/
+      child: BottomAppBar(
+       color: darkColor, //.withOpacity(0)
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            buildBottomIcon(Icons.calendar_today, 26, 0),
+            buildBottomIcon(Icons.search, 32, 1),
+            buildBottomIcon(Icons.home, 32, 2),
+            buildBottomIcon(Icons.info_outline, 28, 3),
+            buildBottomIcon(Icons.location_on_outlined, 32, 4),
+          ],
+        ),
       ),
     );
   }
