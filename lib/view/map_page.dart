@@ -1,3 +1,5 @@
+//import 'dart:html';
+
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:sky_mint/constants/colors.dart';
@@ -10,11 +12,11 @@ class MapPage extends StatefulWidget {
 }
 
 class _MapPageState extends State<MapPage> {
-  var firstvalue = 41.025930;
-  var secondValue = 28.889374;
+  var firstVal = 41.025930;
+  var secondVal = 28.889374;
   var pressAttention = false;
   GoogleMapController? _controller;
-  static final _cameraPosition =
+  static final _cameraPositionDP =
       CameraPosition(target: LatLng(41.025930, 28.889374), zoom: 15.0);
 
   @override
@@ -23,7 +25,7 @@ class _MapPageState extends State<MapPage> {
       body: Stack(
         children: [
           GoogleMap(
-              initialCameraPosition: _cameraPosition,
+              initialCameraPosition: _cameraPositionDP,
               myLocationButtonEnabled: true,
               mapType: MapType.normal,
               tiltGesturesEnabled: true,
@@ -38,8 +40,10 @@ class _MapPageState extends State<MapPage> {
             child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
               ElevatedButton(
                 onPressed: () {
-                 // setState(() => pressattention = !pressattention);
-                 setState(() {
+                  _controller!.animateCamera(CameraUpdate.newCameraPosition(
+                      (CameraPosition(
+                          target: LatLng(41.025930, 28.889374), zoom: 15.0))));
+                  setState(() {
                     if (pressAttention == true) {
                       pressAttention = !pressAttention;
                     }
@@ -62,6 +66,10 @@ class _MapPageState extends State<MapPage> {
               ElevatedButton(
                 onPressed: () {
                   //setState(() => pressattention = !pressattention);
+                  _controller!.animateCamera(CameraUpdate.newCameraPosition(
+                      (CameraPosition(
+                          target: LatLng(41.051739, 29.010093), zoom: 15.0))));
+
                   setState(() {
                     if (pressAttention == false) {
                       pressAttention = !pressAttention;

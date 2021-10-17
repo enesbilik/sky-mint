@@ -13,13 +13,13 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      /*decoration: BoxDecoration(
+      decoration: BoxDecoration(
         gradient: LinearGradient(
-          colors: [lineargradient1, lineargradient2],
+          colors: const [lineargradient1, lineargradient2],
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
         ),
-      ),*/
+      ),
       child: AppBar(
         centerTitle: true,
         backgroundColor: darkColor,
@@ -31,8 +31,8 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
         actions: [
           buildActionButton(Icons.notifications_none, 28, () {}),
           buildActionButton(Icons.messenger_outline_sharp, 26, () {
-            Navigator.push(
-                context, MaterialPageRoute(builder: (context) => MessagePage()));
+            Navigator.push(context,
+                MaterialPageRoute(builder: (context) => MessagePage()));
           }),
         ],
       ),

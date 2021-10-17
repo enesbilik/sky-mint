@@ -26,16 +26,16 @@ class _MainPageState extends State<MainPage> {
   }
 
   Widget buildBottomBar() {
-    return Container(/*
+    return Container(
       decoration: BoxDecoration(
         gradient: LinearGradient(
-          colors: [lineargradient1, lineargradient2],
+          colors: const [lineargradient1, lineargradient2],
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
         ),
-      ),*/
+      ),
       child: BottomAppBar(
-       color: darkColor, //.withOpacity(0)
+        color: darkColor, //.withOpacity(0)
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
