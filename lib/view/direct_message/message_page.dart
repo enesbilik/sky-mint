@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sky_mint/constants/colors.dart';
 import 'package:sky_mint/models/user_model.dart';
+import 'package:sky_mint/view/direct_message/chat_page.dart';
 import 'package:sky_mint/widgets/app_bar.dart';
 
 class MessagePage extends StatefulWidget {
@@ -29,10 +30,16 @@ class _MessagePageState extends State<MessagePage> {
       itemBuilder: (BuildContext context, int index) {
         return ListTile(
           leading: buildProfilePhoto(index),
-          title: Text(listOfUser[index].name,style: TextStyle(fontFamily: "Pattaya"),),
+          title: Text(
+            listOfUser[index].name,
+            style: TextStyle(fontFamily: "Pattaya"),
+          ),
           subtitle: buildSubtitle(index),
           trailing: buildTrailing(index),
-          onTap: () {},
+          onTap: () {
+            Navigator.push(context,
+                MaterialPageRoute(builder: (context) => ChatPage(index)));
+          },
         );
       },
     );
