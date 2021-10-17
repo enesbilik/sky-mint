@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sky_mint/constants/colors.dart';
 import 'package:sky_mint/models/user_model.dart';
 import 'package:sky_mint/widgets/app_bar.dart';
 
@@ -12,6 +13,7 @@ class ChatPage extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: darkColor,
         centerTitle: false,
         title: buildAppBarText(selectedUser),
         actions: [

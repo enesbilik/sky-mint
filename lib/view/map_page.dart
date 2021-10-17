@@ -12,8 +12,6 @@ class MapPage extends StatefulWidget {
 }
 
 class _MapPageState extends State<MapPage> {
-  var firstVal = 41.025930;
-  var secondVal = 28.889374;
   var pressAttention = false;
   GoogleMapController? _controller;
   static final _cameraPositionDP =
