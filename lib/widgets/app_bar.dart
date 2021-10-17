@@ -12,30 +12,21 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        gradient: LinearGradient(
-          colors: const [lineargradient1, lineargradient2],
-          begin: Alignment.topLeft,
-          end: Alignment.bottomRight,
-        ),
+    return AppBar(
+      centerTitle: true,
+      backgroundColor: darkColor,
+      title: const Text(
+        "Yıldızın\nSosyal Medyası",
+        textAlign: TextAlign.center,
+        style: TextStyle(fontFamily: "Pattaya", color: softwhiteColor),
       ),
-      child: AppBar(
-        centerTitle: true,
-        backgroundColor: darkColor,
-        title: const Text(
-          "Yıldızın\nSosyal Medyası",
-          textAlign: TextAlign.center,
-          style: TextStyle(fontFamily: "Pattaya", color: softwhiteColor),
-        ),
-        actions: [
-          buildActionButton(Icons.notifications_none, 28, () {}),
-          buildActionButton(Icons.messenger_outline_sharp, 26, () {
-            Navigator.push(context,
-                MaterialPageRoute(builder: (context) => MessagePage()));
-          }),
-        ],
-      ),
+      actions: [
+        buildActionButton(Icons.notifications_none, 28, () {}),
+        buildActionButton(Icons.messenger_outline_sharp, 26, () {
+          Navigator.push(context,
+              MaterialPageRoute(builder: (context) => MessagePage()));
+        }),
+      ],
     );
   }
 }
