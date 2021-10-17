@@ -37,6 +37,9 @@ class _MessagePageState extends State<MessagePage> {
           subtitle: buildSubtitle(index),
           trailing: buildTrailing(index),
           onTap: () {
+            setState(() {
+              listOfUser[index].lastNumberOfMessage = 0;
+            });
             Navigator.push(context,
                 MaterialPageRoute(builder: (context) => ChatPage(index)));
           },
