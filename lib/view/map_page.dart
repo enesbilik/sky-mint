@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:sky_mint/constants/colors.dart';
 
 class MapPage extends StatefulWidget {
   const MapPage({Key? key}) : super(key: key);
@@ -9,24 +10,80 @@ class MapPage extends StatefulWidget {
 }
 
 class _MapPageState extends State<MapPage> {
+  var firstvalue = 41.025930;
+  var secondValue = 28.889374;
+  var pressAttention = false;
   GoogleMapController? _controller;
-  static const _cameraPosition =
+  static final _cameraPosition =
       CameraPosition(target: LatLng(41.025930, 28.889374), zoom: 15.0);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: GoogleMap(
-          initialCameraPosition: _cameraPosition,
-          myLocationButtonEnabled: true,
-          mapType: MapType.normal,
-          tiltGesturesEnabled: true,
-          compassEnabled: false,
-          scrollGesturesEnabled: true,
-          zoomGesturesEnabled: true,
-          onMapCreated: (GoogleMapController controller) {
-            _controller = controller;
-          }),
+      body: Stack(
+        children: [
+          GoogleMap(
+              initialCameraPosition: _cameraPosition,
+              myLocationButtonEnabled: true,
+              mapType: MapType.normal,
+              tiltGesturesEnabled: true,
+              compassEnabled: false,
+              scrollGesturesEnabled: true,
+              zoomGesturesEnabled: true,
+              onMapCreated: (GoogleMapController controller) {
+                _controller = controller;
+              }),
+          Padding(
+            padding: const EdgeInsets.only(top: 20),
+            child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+              ElevatedButton(
+                onPressed: () {
+                 // setState(() => pressattention = !pressattention);
+                 setState(() {
+                    if (pressAttention == true) {
+                      pressAttention = !pressAttention;
+                    }
+                  });
+                },
+                child: Text(
+                  "Davutpaşa",
+                  style: TextStyle(fontFamily: "Pattaya", fontSize: 16),
+                ),
+                style: ElevatedButton.styleFrom(
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(30),
+                        bottomLeft: Radius.circular(30)),
+                  ),
+                  minimumSize: Size(90, 30),
+                  primary: pressAttention ? kPrimaryColor : darkColor,
+                ),
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  //setState(() => pressattention = !pressattention);
+                  setState(() {
+                    if (pressAttention == false) {
+                      pressAttention = !pressAttention;
+                    }
+                  });
+                },
+                child: Text("Beşiktaş",
+                    style: TextStyle(fontFamily: "Pattaya", fontSize: 16)),
+                style: ElevatedButton.styleFrom(
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.only(
+                        topRight: Radius.circular(30),
+                        bottomRight: Radius.circular(30)),
+                  ),
+                  minimumSize: Size(90, 30),
+                  primary: pressAttention ? darkColor : kPrimaryColor,
+                ),
+              ),
+            ]),
+          ),
+        ],
+      ),
     );
   }
 }

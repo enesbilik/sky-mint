@@ -11,7 +11,7 @@ class MyDrawerMenu extends StatelessWidget {
   Widget build(BuildContext context) {
     return ClipRRect(
       borderRadius: const BorderRadius.only(
-          topRight: Radius.elliptical(70, 200), //bottomRight: Radius.elliptical(70, 200)
+          topRight: Radius.elliptical(150, 200), //bottomRight: Radius.elliptical(70, 200)
           ),
       child: Drawer(
         child: Container(/*decoration: BoxDecoration(

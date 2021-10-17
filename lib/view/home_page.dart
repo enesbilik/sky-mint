@@ -52,7 +52,7 @@ class _HomePageState extends State<HomePage> {
           tileColor: softwhiteColor,
           title: Text(
             listOfPostName[index],
-            style: TextStyle(color: darkColor,fontFamily: "Pattaya"),
+            style: TextStyle(color: Colors.black,fontFamily: "Pattaya"),
           ),
           subtitle: Text(
             listOfPostName[index],
@@ -64,7 +64,7 @@ class _HomePageState extends State<HomePage> {
           trailing: IconButton(
             padding: EdgeInsets.zero,
             constraints: BoxConstraints(),
-            icon: Icon(Icons.more_vert,color: darkColor,),
+            icon: Icon(Icons.more_vert,color: Colors.black,),
             onPressed: () {},
           ),
         ),
@@ -84,7 +84,7 @@ class _HomePageState extends State<HomePage> {
                   icon: Icon(
                     index % 2 == 0 ? Icons.star_border : Icons.star_outlined,
                     size: 32,
-                    color: darkColor,
+                    color: Colors.black,
                   ),
                 ),
                 IconButton(
@@ -92,7 +92,7 @@ class _HomePageState extends State<HomePage> {
                   icon: Icon(
                     Icons.messenger_outline,
                     size: 28,
-                    color: darkColor,
+                    color: Colors.black,
                   ),
                 ),
                 IconButton(
@@ -100,7 +100,7 @@ class _HomePageState extends State<HomePage> {
                   icon: Icon(
                     Icons.send,
                     size: 28,
-                    color: darkColor,
+                    color: Colors.black,
                   ),
                 ),
                 Spacer(),
@@ -109,7 +109,7 @@ class _HomePageState extends State<HomePage> {
                   icon: Icon(
                     Icons.arrow_drop_down_circle_outlined,
                     size: 32,
-                    color: darkColor,
+                    color: Colors.black,
                   ),
                 ),
               ],
@@ -119,7 +119,7 @@ class _HomePageState extends State<HomePage> {
       Divider(
                 thickness: 0.2,
                 height: 0.2,
-                color: darkColor,
+                color: Colors.black,
               ),
       ],
     );
