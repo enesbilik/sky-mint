@@ -11,8 +11,9 @@ class MyDrawerMenu extends StatelessWidget {
   Widget build(BuildContext context) {
     return ClipRRect(
       borderRadius: const BorderRadius.only(
-          topRight: Radius.elliptical(150, 200), //bottomRight: Radius.elliptical(70, 200)
-          ),
+        topRight: Radius.elliptical(
+            150, 200), //bottomRight: Radius.elliptical(70, 200)
+      ),
       child: Drawer(
         child: ListView(
           padding: const EdgeInsets.all(16.0),
@@ -20,7 +21,7 @@ class MyDrawerMenu extends StatelessWidget {
             const SafeArea(
               child: CircleAvatar(
                 radius: 55,
-                backgroundColor: softwhiteColor,
+                backgroundColor: darkColor,
                 child: CircleAvatar(
                   radius: 50,
                   backgroundImage: AssetImage("assets/eg1.png"),
@@ -49,35 +50,28 @@ class MyDrawerMenu extends StatelessWidget {
               onTap: () {},
               title: Text(
                 "Sky-Mint",
-                style: TextStyle(
-                    color: softwhiteColor,
-                    fontFamily: "Pattaya",
-                    fontSize: 18),
+                style: TextStyle(color: darkColor, fontSize: 18),
               ),
               subtitle: Text(
                 "mint@skylab.com",
-                style: TextStyle(
-                    color: softwhiteColor,
-                    fontFamily: "Pattaya",
-                    fontSize: 16),
+                style: TextStyle(color: darkColor, fontSize: 16),
               ),
             ),
             Divider(
-              color: softwhiteColor,
+              color: darkColor,
             ),
             ListTile(
               onTap: () {},
               leading: Icon(
                 Icons.person_sharp,
                 size: 28,
-                color: softwhiteColor,
+                color: darkColor,
               ),
               title: Text(
                 "Kullanıcı Profili",
                 style: TextStyle(
                   fontSize: 18,
-                  fontFamily: "Pattaya",
-                  color: softwhiteColor,
+                  color: darkColor,
                 ),
               ),
             ),
@@ -86,14 +80,13 @@ class MyDrawerMenu extends StatelessWidget {
               leading: Icon(
                 Icons.settings,
                 size: 28,
-                color: softwhiteColor,
+                color: darkColor,
               ),
               title: Text(
                 "Ayarlar",
                 style: TextStyle(
                   fontSize: 18,
-                  fontFamily: "Pattaya",
-                  color: softwhiteColor,
+                  color: darkColor,
                 ),
               ),
             ),
@@ -102,14 +95,13 @@ class MyDrawerMenu extends StatelessWidget {
               leading: Icon(
                 Icons.power_settings_new_outlined,
                 size: 28,
-                color: softwhiteColor,
+                color: darkColor,
               ),
               title: Text(
                 "Çıkış Yap",
                 style: TextStyle(
                   fontSize: 18,
-                  fontFamily: "Pattaya",
-                  color: softwhiteColor,
+                  color: darkColor,
                 ),
               ),
             )

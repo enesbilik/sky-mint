@@ -13,18 +13,20 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
+      elevation: 0.874,
+      iconTheme: IconThemeData(color: darkColor),
       centerTitle: true,
-      backgroundColor: darkColor,
+      backgroundColor: softwhiteColor,
       title: const Text(
         "Yıldızın\nSosyal Medyası",
         textAlign: TextAlign.center,
-        style: TextStyle(fontFamily: "Pattaya", color: softwhiteColor),
+        style: TextStyle(fontFamily: "Pattaya", color: darkColor),
       ),
       actions: [
         buildActionButton(Icons.notifications_none, 28, () {}),
         buildActionButton(Icons.messenger_outline_sharp, 26, () {
-          Navigator.push(context,
-              MaterialPageRoute(builder: (context) => MessagePage()));
+          Navigator.push(
+              context, MaterialPageRoute(builder: (context) => MessagePage()));
         }),
       ],
     );
@@ -40,7 +42,7 @@ Widget buildActionButton(
     onPressed: () => onClick(),
     icon: Icon(
       icon,
-      color: softwhiteColor,
+      color: darkColor,
       size: iconSize,
     ),
   );
