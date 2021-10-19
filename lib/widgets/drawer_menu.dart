@@ -50,11 +50,11 @@ class MyDrawerMenu extends StatelessWidget {
               onTap: () {},
               title: Text(
                 "Sky-Mint",
-                style: TextStyle(color: darkColor, fontSize: 18),
+                style: TextStyle(color: darkColor, fontSize: 18,fontFamily: "RobotoSlab Bold"),
               ),
               subtitle: Text(
                 "admin@sky_mint.com",
-                style: TextStyle(color: darkColor, fontSize: 16),
+                style: TextStyle(color: darkColor, fontSize: 16,fontFamily: "RobotoSlab Light"),
               ),
             ),
             Divider(
@@ -72,6 +72,7 @@ class MyDrawerMenu extends StatelessWidget {
                 style: TextStyle(
                   fontSize: 18,
                   color: darkColor,
+                  fontFamily: "RobotoSlab"
                 ),
               ),
             ),
@@ -85,6 +86,7 @@ class MyDrawerMenu extends StatelessWidget {
               title: Text(
                 "Ayarlar",
                 style: TextStyle(
+                  fontFamily: "RobotoSlab",
                   fontSize: 18,
                   color: darkColor,
                 ),
@@ -100,6 +102,7 @@ class MyDrawerMenu extends StatelessWidget {
               title: Text(
                 "Çıkış Yap",
                 style: TextStyle(
+                  fontFamily: "RobotoSlab",
                   fontSize: 18,
                   color: darkColor,
                 ),

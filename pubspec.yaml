@@ -80,6 +80,15 @@ flutter:
     - family: Pattaya
       fonts:
         - asset: fonts/Pattaya-Regular.ttf
+    - family: RobotoSlab Light
+      fonts:
+        - asset: fonts/RobotoSlab-Light.ttf
+    - family: RobotoSlab
+      fonts:
+        - asset: fonts/RobotoSlab-Regular.ttf
+    - family: RobotoSlab Bold
+      fonts:
+        - asset: fonts/RobotoSlab-Bold.ttf
   #       - asset: fonts/Schyler-Italic.ttf
   #         style: italic
   #   - family: Trajan Pro
