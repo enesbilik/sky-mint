@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:sky_mint/constants/colors.dart';
 import 'package:sky_mint/view/home_page.dart';
 import 'package:sky_mint/view/map_page.dart';
+import 'package:sky_mint/view/sks_info_page.dart';
 import 'package:sky_mint/widgets/app_bar.dart';
 import 'package:sky_mint/widgets/drawer_menu.dart';
 import 'package:animated_bottom_navigation_bar/animated_bottom_navigation_bar.dart';
@@ -88,9 +89,7 @@ class _MainPageState extends State<MainPage> {
       );
     }
     if (_currentTab == 2) {
-      return Center(
-        child: Text("info"),
-      );
+      return infoPage();
     }
   }
 }

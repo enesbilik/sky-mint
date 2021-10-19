@@ -53,7 +53,7 @@ class MyDrawerMenu extends StatelessWidget {
                 style: TextStyle(color: darkColor, fontSize: 18),
               ),
               subtitle: Text(
-                "mint@skylab.com",
+                "admin@sky_mint.com",
                 style: TextStyle(color: darkColor, fontSize: 16),
               ),
             ),
