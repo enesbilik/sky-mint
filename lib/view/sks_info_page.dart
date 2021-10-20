@@ -6,124 +6,82 @@ import 'package:sky_mint/models/food_model.dart';
 //import 'package:flutter/rendering.dart';
 
 // ignore: camel_case_types
-class InfoPage extends StatefulWidget {
-  @override
-  State<InfoPage> createState() => _InfoPageState();
-}
-
-class _InfoPageState extends State<InfoPage> {
-  final controller = PageController(initialPage: 0);
+class InfoPage extends StatelessWidget {
+  final PageController controller = PageController(initialPage: 0);
 
   @override
   Widget build(BuildContext context) {
-    Size deviceSize = MediaQuery.of(context).size;
     return Scaffold(
         body: SafeArea(
-      child: buildBody(deviceSize),
+      child: buildBody(),
     ));
   }
 
-  Widget buildBody(Size deviceSize) {
-    return Container(
-      width: deviceSize.width,
-      height: deviceSize.height,
-      padding: EdgeInsets.symmetric(
-        horizontal: 10,
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: [
-          Container(
-            width: deviceSize.width * 0.9,
-            height: deviceSize.height * 0.38,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(30),
-              gradient: const LinearGradient(
-                colors: [
-                  Color(0xff0F2027),
-                  Color(0xff203A43),
-                  Color(0xff2C5364),
-                ],
-                begin: Alignment.topLeft,
-                end: Alignment.bottomRight,
-              ),
-            ),
-            child: buildFoodText(tempFoodMenu),
-          ),
-          Container(
-            width: deviceSize.width * 0.9,
-            height: deviceSize.height * 0.36,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(30),
-              gradient: const LinearGradient(
-                colors: [
-                  Color(0xff0F2027),
-                  Color(0xff203A43),
-                  Color(0xff2C5364),
-                ],
-                begin: Alignment.topLeft,
-                end: Alignment.bottomRight,
-              ),
+  Widget buildBody() {
+    return Column(children: [
+      Expanded(
+        flex: 3,
+        child: Container(
+          margin: EdgeInsets.fromLTRB(40, 35, 40, 20),
+          padding: EdgeInsets.all(10),
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(30),
+            gradient: const LinearGradient(
+              colors: [
+                Color(0xff0F2027),
+                Color(0xff203A43),
+                Color(0xff2C5364),
+              ],
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
             ),
           ),
-        ],
-      ),
-    );
-  }
-
-  buildFoodText(FoodModel foodMenu) {
-    return Padding(
-      padding: const EdgeInsets.all(24),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          child: PageView(
             children: [
-              Text(
-                foodMenu.day,
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 20,
-                ),
-              ),
-              Text(
-                foodMenu.date,
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 20,
-                ),
-              ),
+              buildFoodInfo(listOfFood[0]),
+              buildFoodInfo(listOfFood[1]),
             ],
           ),
-          Expanded(
-            child: PageView(
-              controller: controller,
-              children: [
-                Center(
-                  child: Text(
-                    foodMenu.dinnerFood,
-                    style: TextStyle(
-                      color: Colors.white,
-                      letterSpacing: 0.7,
-                      height: 1.5,
-                      fontSize: 16,
-                    ),
-                  ),
-                ),
-                Center(
-                  child: Text(
-                    foodMenu.lunchFood,
-                    style: TextStyle(
-                      color: Colors.white,
-                      letterSpacing: 0.7,
-                      height: 1.5,
-                      fontSize: 16,
-                    ),
-                  ),
-                ),
+        ),
+      ),
+      Expanded(
+        flex: 2,
+        child: Container(
+          margin: EdgeInsets.fromLTRB(40, 35, 40, 20),
+          padding: EdgeInsets.all(10),
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(30),
+            gradient: const LinearGradient(
+              colors: [
+                Color(0xff0F2027),
+                Color(0xff203A43),
+                Color(0xff2C5364),
               ],
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
+            ),
+          ),
+          child: PageView(
+            children: [
+              buildFoodInfo(listOfFood[0]),
+              buildFoodInfo(listOfFood[1]),
+            ],
+          ),
+        ),
+      ),
+    ]);
+  }
+
+  Widget buildFoodInfo(FoodModel food) {
+    return Padding(
+      padding: const EdgeInsets.all(6.0),
+      child: Column(
+        children: [
+          Text(
+            food.day,
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: 22,
             ),
           ),
         ],
