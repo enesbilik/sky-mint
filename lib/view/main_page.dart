@@ -27,7 +27,7 @@ class _MainPageState extends State<MainPage> {
 
   Widget buildBottomBar() {
     return BottomAppBar(
-      color: darkColor, //.withOpacity(0)
+      color: softwhiteColor, //.withOpacity(0)
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
@@ -51,7 +51,7 @@ class _MainPageState extends State<MainPage> {
       icon: Icon(
         icon,
         size: _currentTab == tab ? iconSize + 2 : iconSize,
-        color: _currentTab == tab ? softwhiteColor : Colors.white54,
+        color: _currentTab == tab ? darkColor : darkColor.withOpacity(0.8),
       ),
     );
   }
