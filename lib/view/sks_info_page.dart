@@ -13,9 +13,7 @@ class InfoPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         body: SafeArea(
-      child: Container(
-        child: buildBody(),
-      ),
+      child: buildBody(),
     ));
   }
 
@@ -23,52 +21,70 @@ class InfoPage extends StatelessWidget {
     return Column(children: [
       Expanded(
         flex: 3,
-        child: PageView(
-          children: [
-            buildFoodContainer(listOfFood[0]),
-            buildFoodContainer(listOfFood[1]),
-          ],
+        child: Container(
+          margin: EdgeInsets.fromLTRB(40, 35, 40, 20),
+          padding: EdgeInsets.all(10),
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(30),
+            gradient: const LinearGradient(
+              colors: [
+                Color(0xff0F2027),
+                Color(0xff203A43),
+                Color(0xff2C5364),
+              ],
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
+            ),
+          ),
+          child: PageView(
+            children: [
+              buildFoodInfo(listOfFood[0]),
+              buildFoodInfo(listOfFood[1]),
+            ],
+          ),
         ),
       ),
       Expanded(
-          flex: 2,
+        flex: 2,
+        child: Container(
+          margin: EdgeInsets.fromLTRB(40, 35, 40, 20),
+          padding: EdgeInsets.all(10),
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(30),
+            gradient: const LinearGradient(
+              colors: [
+                Color(0xff0F2027),
+                Color(0xff203A43),
+                Color(0xff2C5364),
+              ],
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
+            ),
+          ),
           child: PageView(
             children: [
-              buildFoodContainer(''),
+              buildFoodInfo(listOfFood[0]),
+              buildFoodInfo(listOfFood[1]),
             ],
-          ))
+          ),
+        ),
+      ),
     ]);
   }
 
-  Widget buildFoodContainer(FoodModel food) {
-    return Container(
-      margin: EdgeInsets.fromLTRB(40, 35, 40, 20),
-      padding: EdgeInsets.all(10),
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(30),
-        gradient: const LinearGradient(
-          colors: [
-            Color(0xff0F2027),
-            Color(0xff203A43),
-            Color(0xff2C5364),
-          ],
-          begin: Alignment.topLeft,
-          end: Alignment.bottomRight,
-        ),
-      ),
-      child: Padding(
-        padding: const EdgeInsets.all(6.0),
-        child: Column(
-          children: [
-            Text(
-              food.day,
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: 22,
-              ),
+  Widget buildFoodInfo(FoodModel food) {
+    return Padding(
+      padding: const EdgeInsets.all(6.0),
+      child: Column(
+        children: [
+          Text(
+            food.day,
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: 22,
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
