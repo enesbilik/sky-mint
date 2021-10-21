@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sky_mint/constants/colors.dart';
+import 'package:sky_mint/view/calendar_page.dart';
 import 'package:sky_mint/view/home_page.dart';
 import 'package:sky_mint/view/map_page.dart';
 import 'package:sky_mint/view/sks_info_page.dart';
@@ -79,9 +80,7 @@ class _MainPageState extends State<MainPage> {
       return MapPage();
     }
     if (_currentTab == 0) {
-      return Center(
-        child: Text("takvim"),
-      );
+      return CalendarPage();
     }
     if (_currentTab == 1) {
       return Center(
