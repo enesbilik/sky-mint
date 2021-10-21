@@ -119,14 +119,14 @@ class _PostItemState extends State<PostItem> {
   Widget buildPostSubtitle() {
     return Text(
       listOfPostName[widget.index],
-      style: TextStyle(color: kPrimaryColor, fontFamily: "RobotoSlab"),
+      style: TextStyle(color: kPrimaryColor, fontFamily: "Poppins Light"),
     );
   }
 
   Widget buildPostTitle() {
     return Text(
       listOfPostName[widget.index],
-      style: TextStyle(color: Colors.black, fontFamily: "RobotoSlab Bold"),
+      style: TextStyle(color: Colors.black, fontFamily: "Poppins Bold"),
     );
   }
 }

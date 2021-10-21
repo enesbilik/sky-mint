@@ -39,6 +39,14 @@ class _InfoPageState extends State<InfoPage> {
             width: deviceSize.width * 0.9,
             height: deviceSize.height * 0.38,
             decoration: BoxDecoration(
+              boxShadow: [
+      BoxShadow(
+        color: Color(0xff75C2FF).withOpacity(0.5),
+        spreadRadius: 1,
+        blurRadius: 7,
+        offset: Offset(0, 3), // changes position of shadow
+      ),
+    ],
               borderRadius: BorderRadius.circular(30),
               gradient: const LinearGradient(
                 colors: foodContainerColors,
@@ -53,6 +61,14 @@ class _InfoPageState extends State<InfoPage> {
             height: deviceSize.height * 0.36,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(30),
+              boxShadow: [
+      BoxShadow(
+        color: Color(0xff75C2FF).withOpacity(0.5),
+        spreadRadius: 1,
+        blurRadius: 7,
+        offset: Offset(0, 3), // changes position of shadow
+      ),
+    ],
               gradient: const LinearGradient(
                 colors: foodContainerColors,
                 begin: Alignment.topLeft,
@@ -79,6 +95,7 @@ class _InfoPageState extends State<InfoPage> {
                 style: TextStyle(
                   color: Colors.white,
                   fontSize: 20,
+                  fontFamily: "Poppins Bold",
                 ),
               ),
               Text(
@@ -86,6 +103,7 @@ class _InfoPageState extends State<InfoPage> {
                 style: TextStyle(
                   color: Colors.white,
                   fontSize: 20,
+                  fontFamily: "Poppins Bold"
                 ),
               ),
             ],
@@ -101,7 +119,8 @@ class _InfoPageState extends State<InfoPage> {
                       color: Colors.white,
                       letterSpacing: 0.7,
                       height: 1.5,
-                      fontSize: 16,
+                      fontSize: 17,
+                      fontFamily: "Poppins Bold"
                     ),
                   ),
                 ),
@@ -112,7 +131,8 @@ class _InfoPageState extends State<InfoPage> {
                       color: Colors.white,
                       letterSpacing: 0.7,
                       height: 1.5,
-                      fontSize: 16,
+                      fontSize: 17,
+                      fontFamily: "Poppins Bold"
                     ),
                   ),
                 ),

@@ -32,7 +32,7 @@ class _MessagePageState extends State<MessagePage> {
           leading: buildProfilePhoto(index),
           title: Text(
             listOfUser[index].name,
-            style: TextStyle(fontFamily: "RobotoSlab"),
+            style: TextStyle(fontFamily: "Poppins"),
           ),
           subtitle: buildSubtitle(index),
           trailing: buildTrailing(index),
@@ -67,7 +67,7 @@ class _MessagePageState extends State<MessagePage> {
         ),
         Text(
           listOfUser[index].lastMessage,
-          style: TextStyle(fontFamily: "RobotoSlab Light", fontSize: 15),
+          style: TextStyle(fontFamily: "Poppins Light", fontSize: 15),
         ),
       ],
     );
@@ -81,7 +81,7 @@ class _MessagePageState extends State<MessagePage> {
         Text(
           listOfUser[index].lastMessageTime,
           style: TextStyle(
-              fontSize: 14, color: Colors.black87, fontFamily: "RobotoSlab Light"),
+              fontSize: 14, color: Colors.black87, fontFamily: "Poppins Light"),
         ),
         SizedBox(
           height: 1,
@@ -94,7 +94,7 @@ class _MessagePageState extends State<MessagePage> {
               child: Text(
                 "${listOfUser[index].lastNumberOfMessage}",
                 style: TextStyle(
-                    color: Colors.white, fontSize: 12, fontFamily: "RobotoSlab"),
+                    color: Colors.white, fontSize: 12, fontFamily: "Poppins"),
               ),
             ),
             width: 20,
@@ -115,7 +115,7 @@ class _MessagePageState extends State<MessagePage> {
       title: const Text(
         "Yıldız Mesaj",
         textAlign: TextAlign.center,
-        style: TextStyle(fontFamily: "RobotoSlab", color: softwhiteColor),
+        style: TextStyle(fontFamily: "Poppins", color: softwhiteColor),
       ),
       actions: [
         buildActionButton(Icons.search, 26, () {}),

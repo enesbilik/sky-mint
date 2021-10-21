@@ -88,6 +88,15 @@ flutter:
     - family: RobotoSlab Bold
       fonts:
         - asset: fonts/RobotoSlab-Bold.ttf
+    - family: Poppins
+      fonts:
+        - asset: fonts/Poppins-Regular.ttf
+    - family: Poppins Bold
+      fonts:
+        - asset: fonts/Poppins-SemiBold.ttf
+    - family: Poppins Light
+      fonts:
+        - asset: fonts/Poppins-ExtraLight.ttf
   #       - asset: fonts/Schyler-Italic.ttf
   #         style: italic
   #   - family: Trajan Pro
