@@ -16,7 +16,7 @@ class MainPage extends StatefulWidget {
 }
 
 class _MainPageState extends State<MainPage> {
-  int _currentTab = 2;
+  int _currentTab = 4;
 
   @override
   Widget build(BuildContext context) {
@@ -42,21 +42,10 @@ class _MainPageState extends State<MainPage> {
     return AnimatedBottomNavigationBar(
       activeIndex: _currentTab,
       gapLocation: GapLocation.center,
-      notchSmoothness: NotchSmoothness.verySmoothEdge,
+      // notchSmoothness: NotchSmoothness.verySmoothEdge,
+      notchSmoothness: NotchSmoothness.softEdge,
       leftCornerRadius: 25,
       rightCornerRadius: 25,
-      /*
-      color: darkColor, //.withOpacity(0)
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: [
-          buildBottomIcon(Icons.calendar_today, 26, 0),
-          buildBottomIcon(Icons.search, 32, 1),
-          buildBottomIcon(Icons.home, 32, 2),
-          buildBottomIcon(Icons.info_outline, 28, 3),
-          buildBottomIcon(Icons.location_on_outlined, 32, 4),
-        ],
-      ),*/
       icons: const [
         Icons.calendar_today,
         Icons.search,

@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:sky_mint/constants/colors.dart';
 import 'package:sky_mint/models/food_model.dart';
 //import 'package:flutter/rendering.dart';
 
@@ -40,11 +41,7 @@ class _InfoPageState extends State<InfoPage> {
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(30),
               gradient: const LinearGradient(
-                colors: [
-                  Color(0xff0F2027),
-                  Color(0xff203A43),
-                  Color(0xff2C5364),
-                ],
+                colors: foodContainerColors,
                 begin: Alignment.topLeft,
                 end: Alignment.bottomRight,
               ),
@@ -57,11 +54,7 @@ class _InfoPageState extends State<InfoPage> {
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(30),
               gradient: const LinearGradient(
-                colors: [
-                  Color(0xff0F2027),
-                  Color(0xff203A43),
-                  Color(0xff2C5364),
-                ],
+                colors: foodContainerColors,
                 begin: Alignment.topLeft,
                 end: Alignment.bottomRight,
               ),
