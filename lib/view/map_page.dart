@@ -20,75 +20,82 @@ class _MapPageState extends State<MapPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Stack(
-        children: [
-          GoogleMap(
-              initialCameraPosition: _cameraPositionDP,
-              myLocationButtonEnabled: true,
-              mapType: MapType.normal,
-              tiltGesturesEnabled: true,
-              compassEnabled: false,
-              scrollGesturesEnabled: true,
-              zoomGesturesEnabled: true,
-              onMapCreated: (GoogleMapController controller) {
-                _controller = controller;
-              }),
-          Padding(
-            padding: const EdgeInsets.only(top: 20),
-            child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-              ElevatedButton(
-                onPressed: () {
-                  _controller!.animateCamera(CameraUpdate.newCameraPosition(
-                      (CameraPosition(
-                          target: LatLng(41.025930, 28.889374), zoom: 15.0))));
-                  setState(() {
-                    if (pressAttention == true) {
-                      pressAttention = !pressAttention;
-                    }
-                  });
-                },
-                child: Text(
-                  "Davutpaşa",
-                  style: TextStyle(fontFamily: "Poppins Bold", fontSize: 16),
-                ),
-                style: ElevatedButton.styleFrom(
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(30),
-                        bottomLeft: Radius.circular(30)),
+      body: Padding(
+        padding: const EdgeInsets.only(bottom: 60.0),
+        child: Stack(
+          children: [
+            GoogleMap(
+                initialCameraPosition: _cameraPositionDP,
+                myLocationButtonEnabled: true,
+                mapType: MapType.normal,
+                tiltGesturesEnabled: true,
+                compassEnabled: false,
+                scrollGesturesEnabled: true,
+                zoomGesturesEnabled: true,
+                onMapCreated: (GoogleMapController controller) {
+                  _controller = controller;
+                }),
+            Padding(
+              padding: const EdgeInsets.only(top: 20),
+              child:
+                  Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+                ElevatedButton(
+                  onPressed: () {
+                    _controller!.animateCamera(CameraUpdate.newCameraPosition(
+                        (CameraPosition(
+                            target: LatLng(41.025930, 28.889374),
+                            zoom: 15.0))));
+                    setState(() {
+                      if (pressAttention == true) {
+                        pressAttention = !pressAttention;
+                      }
+                    });
+                  },
+                  child: Text(
+                    "Davutpaşa",
+                    style: TextStyle(fontFamily: "Poppins Bold", fontSize: 16),
                   ),
-                  minimumSize: Size(110, 30),
-                  primary: pressAttention ? kPrimaryColor : darkColor,
+                  style: ElevatedButton.styleFrom(
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(30),
+                          bottomLeft: Radius.circular(30)),
+                    ),
+                    minimumSize: Size(110, 30),
+                    primary: pressAttention ? kPrimaryColor : darkColor,
+                  ),
                 ),
-              ),
-              ElevatedButton(
-                onPressed: () {
-                  //setState(() => pressattention = !pressattention);
-                  _controller!.animateCamera(CameraUpdate.newCameraPosition(
-                      (CameraPosition(
-                          target: LatLng(41.051739, 29.010093), zoom: 15.0))));
+                ElevatedButton(
+                  onPressed: () {
+                    //setState(() => pressattention = !pressattention);
+                    _controller!.animateCamera(CameraUpdate.newCameraPosition(
+                        (CameraPosition(
+                            target: LatLng(41.051739, 29.010093),
+                            zoom: 15.0))));
 
-                  setState(() {
-                    if (pressAttention == false) {
-                      pressAttention = !pressAttention;
-                    }
-                  });
-                },
-                child: Text("Beşiktaş",
-                    style: TextStyle(fontFamily: "Poppins Bold", fontSize: 16)),
-                style: ElevatedButton.styleFrom(
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.only(
-                        topRight: Radius.circular(30),
-                        bottomRight: Radius.circular(30)),
+                    setState(() {
+                      if (pressAttention == false) {
+                        pressAttention = !pressAttention;
+                      }
+                    });
+                  },
+                  child: Text("Beşiktaş",
+                      style:
+                          TextStyle(fontFamily: "Poppins Bold", fontSize: 16)),
+                  style: ElevatedButton.styleFrom(
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.only(
+                          topRight: Radius.circular(30),
+                          bottomRight: Radius.circular(30)),
+                    ),
+                    minimumSize: Size(110, 30),
+                    primary: pressAttention ? darkColor : kPrimaryColor,
                   ),
-                  minimumSize: Size(110, 30),
-                  primary: pressAttention ? darkColor : kPrimaryColor,
                 ),
-              ),
-            ]),
-          ),
-        ],
+              ]),
+            ),
+          ],
+        ),
       ),
     );
   }

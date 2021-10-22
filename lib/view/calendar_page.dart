@@ -68,21 +68,6 @@ class _CalendarPageState extends State<CalendarPage> {
           formatButtonVisible: true,
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () => showDialog(
-            context: context,
-            builder: (BuildContext context) => AlertDialog(
-                  title: Text("Yeni Mevzu"),
-                  content: TextFormField(),
-                  actions: [
-                    TextButton(onPressed: () {}, child: Text("Tamam")),
-                    TextButton(
-                        onPressed: () => Navigator.pop(context),
-                        child: Text("İptal"))
-                  ],
-                )),
-        child: Icon(Icons.add),
-      ),
     );
   }
 }
