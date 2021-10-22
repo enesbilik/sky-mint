@@ -23,7 +23,7 @@ class _HomePageState extends State<HomePage> {
           width: deviceSize.width,
           child: buildBody(),
         ),
-        floatingActionButton: buildFloatingActionButton(),
+        floatingActionButton: buildFloatingActionButton(() {}),
       ),
     );
   }
@@ -44,11 +44,11 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-  Widget buildFloatingActionButton() {
+  Widget buildFloatingActionButton(Function click) {
     return FloatingActionButton(
         child: Icon(Icons.add_box_outlined),
         backgroundColor: softwhiteColor,
         foregroundColor: darkColor,
-        onPressed: () {});
+        onPressed: () => click());
   }
 }
