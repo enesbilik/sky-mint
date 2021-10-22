@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sky_mint/constants/colors.dart';
 
 class SearchPage extends StatefulWidget {
   const SearchPage({Key? key}) : super(key: key);
@@ -16,12 +17,16 @@ class _SearchPageState extends State<SearchPage> {
         child: SizedBox(
           child: DecoratedBox(
             decoration: BoxDecoration(
-              color: Colors.purple,
+              borderRadius: BorderRadius.circular(100),
+              border: Border.all(width: 2, color: darkColor),
             ),
             child: Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: const EdgeInsets.only(top: 3, left: 15, right: 20),
               child: TextFormField(
-                decoration: InputDecoration(),
+                decoration: InputDecoration(
+                    border: InputBorder.none,
+                    hintText: "Kişi veya Kulüp Aratınız",
+                    icon: Icon(Icons.search)),
               ),
             ),
           ),
