@@ -49,7 +49,7 @@ class _MapPageState extends State<MapPage> {
                 },
                 child: Text(
                   "Davutpaşa",
-                  style: TextStyle(fontFamily: "RobotoSlab Bold", fontSize: 16),
+                  style: TextStyle(fontFamily: "Poppins Bold", fontSize: 16),
                 ),
                 style: ElevatedButton.styleFrom(
                   shape: RoundedRectangleBorder(
@@ -75,7 +75,7 @@ class _MapPageState extends State<MapPage> {
                   });
                 },
                 child: Text("Beşiktaş",
-                    style: TextStyle(fontFamily: "RobotoSlab Bold", fontSize: 16)),
+                    style: TextStyle(fontFamily: "Poppins Bold", fontSize: 16)),
                 style: ElevatedButton.styleFrom(
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.only(

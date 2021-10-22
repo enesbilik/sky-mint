@@ -35,7 +35,11 @@ class ChatPage extends StatelessWidget {
         SizedBox(
           width: 16,
         ),
+<<<<<<< HEAD
         Center(child: Text(selectedUser.name)),
+=======
+        Text(selectedUser.name,style: TextStyle(fontFamily: "Poppins"),),
+>>>>>>> eb7cf447a47b35ac6f9441bbf409f0a955657c51
       ],
     );
   }

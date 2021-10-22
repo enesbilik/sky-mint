@@ -53,14 +53,14 @@ class MyDrawerMenu extends StatelessWidget {
                 style: TextStyle(
                     color: darkColor,
                     fontSize: 18,
-                    fontFamily: "RobotoSlab Bold"),
+                    fontFamily: "Poppins Bold"),
               ),
               subtitle: Text(
                 "admin@sky_mint.com",
                 style: TextStyle(
                     color: darkColor,
                     fontSize: 16,
-                    fontFamily: "RobotoSlab Light"),
+                    fontFamily: "Poppins Light"),
               ),
             ),
             Divider(
@@ -76,7 +76,7 @@ class MyDrawerMenu extends StatelessWidget {
               title: Text(
                 "Kullanıcı Profili",
                 style: TextStyle(
-                    fontSize: 18, color: darkColor, fontFamily: "RobotoSlab"),
+                    fontSize: 18, color: darkColor, fontFamily: "Poppins"),
               ),
             ),
             ListTile(
@@ -89,7 +89,7 @@ class MyDrawerMenu extends StatelessWidget {
               title: Text(
                 "Ayarlar",
                 style: TextStyle(
-                  fontFamily: "RobotoSlab",
+                  fontFamily: "Poppins",
                   fontSize: 18,
                   color: darkColor,
                 ),
@@ -105,7 +105,7 @@ class MyDrawerMenu extends StatelessWidget {
               title: Text(
                 "Çıkış Yap",
                 style: TextStyle(
-                  fontFamily: "RobotoSlab",
+                  fontFamily: "Poppins",
                   fontSize: 18,
                   color: darkColor,
                 ),
