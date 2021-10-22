@@ -1,34 +1,32 @@
 import 'package:flutter/material.dart';
 import 'package:sky_mint/constants/colors.dart';
+import 'package:sky_mint/models/post_model.dart';
 
-class PostItem extends StatefulWidget {
-  int index;
-  PostItem(this.index, {Key? key}) : super(key: key);
+class BuildPost extends StatefulWidget {
+  PostModel post;
+  BuildPost(this.post);
 
   @override
-  _PostItemState createState() => _PostItemState();
+  State<BuildPost> createState() => _BuildPostState();
 }
 
-class _PostItemState extends State<PostItem> {
-  final listOfPostName = ["Nasa", "Orta Bahçe", "Taş Bina"];
+class _BuildPostState extends State<BuildPost> {
+  String defaultImage = "assets/ytu_pp.png";
   bool isStar = false;
 
   @override
   Widget build(BuildContext context) {
-    String _imageUrl =
-        "assets/images/post_images/post_image${widget.index}.jpeg";
-
     return Column(
       // ignore: prefer_const_literals_to_create_immutables
       children: [
         ListTile(
           tileColor: softwhiteColor,
-          title: buildPostTitle(),
-          subtitle: buildPostSubtitle(),
-          leading: buildPostProfileImage(_imageUrl),
+          title: buildPostTitle(widget.post),
+          subtitle: buildPostSubtitle(widget.post),
+          leading: buildPostProfileImage(widget.post),
           trailing: buildPostMoreIcon(),
         ),
-        buildPostImage(_imageUrl),
+        buildPostImage(widget.post),
         buildPostIcons(),
         Divider(
           thickness: 0.2,
@@ -90,12 +88,15 @@ class _PostItemState extends State<PostItem> {
     );
   }
 
-  Widget buildPostImage(String _imageUrl) {
-    return Image.asset(
-      _imageUrl,
-      width: double.infinity,
-      fit: BoxFit.contain,
-    );
+  Widget buildPostImage(PostModel post) {
+    if (post.image != null) {
+      return Image.asset(
+        post.image!,
+        width: double.infinity,
+        fit: BoxFit.contain,
+      );
+    }
+    return SizedBox();
   }
 
   Widget buildPostMoreIcon() {
@@ -110,22 +111,22 @@ class _PostItemState extends State<PostItem> {
     );
   }
 
-  Widget buildPostProfileImage(String _imageUrl) {
+  Widget buildPostProfileImage(PostModel post) {
     return CircleAvatar(
-      backgroundImage: AssetImage(_imageUrl),
+      backgroundImage: AssetImage(post.image ?? defaultImage),
     );
   }
 
-  Widget buildPostSubtitle() {
+  Widget buildPostSubtitle(PostModel post) {
     return Text(
-      listOfPostName[widget.index],
+      post.subTitle,
       style: TextStyle(color: kPrimaryColor, fontFamily: "Poppins Light"),
     );
   }
 
-  Widget buildPostTitle() {
+  Widget buildPostTitle(PostModel post) {
     return Text(
-      listOfPostName[widget.index],
+      post.title,
       style: TextStyle(color: Colors.black, fontFamily: "Poppins Bold"),
     );
   }

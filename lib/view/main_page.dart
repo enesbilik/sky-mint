@@ -7,7 +7,6 @@ import 'package:sky_mint/view/search_page.dart';
 import 'package:sky_mint/view/sks_info_page.dart';
 import 'package:sky_mint/widgets/app_bar.dart';
 import 'package:sky_mint/widgets/drawer_menu.dart';
-import 'package:animated_bottom_navigation_bar/animated_bottom_navigation_bar.dart';
 import 'package:salomon_bottom_bar/salomon_bottom_bar.dart';
 
 class MainPage extends StatefulWidget {
@@ -18,49 +17,17 @@ class MainPage extends StatefulWidget {
 }
 
 class _MainPageState extends State<MainPage> {
-  int _currentTab = 4;
+  int _currentTab = 2;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        extendBody: true,
-        body: getCurrentPage(),
-        drawer: MyDrawerMenu(),
-        appBar: MyAppBar(),
-        bottomNavigationBar: buildBottomBar(),
-        floatingActionButton: buildFloatingActionButton()
-        /*
-      FloatingActionButton(
-        child: Icon(Icons.add_box_outlined),
-        backgroundColor: softwhiteColor,
-        foregroundColor: darkColor,
-        onPressed: () {
-          setState(() {
-            _currentTab = 4;
-          });
-        },
-      ),
-      */
-        //floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-        );
-  }
-
-  Widget buildFloatingActionButton() {
-    if (_currentTab == 2) {
-      return FloatingActionButton(
-          child: Icon(Icons.add_box_outlined),
-          backgroundColor: softwhiteColor,
-          foregroundColor: darkColor,
-          onPressed: () {
-            setState(() {
-              _currentTab = 4;
-            });
-          });
-    } else {
-      return SizedBox(
-        height: 0.001,
-      );
-    }
+      extendBody: true,
+      body: getCurrentPage(),
+      drawer: MyDrawerMenu(),
+      appBar: MyAppBar(),
+      bottomNavigationBar: buildBottomBar(),
+    );
   }
 
   Widget buildBottomBar() {
@@ -132,9 +99,7 @@ class _MainPageState extends State<MainPage> {
       return CalendarPage();
     }
     if (_currentTab == 1) {
-      return Center(
-        child: SearchPage(),
-      );
+      return SearchPage();
     }
     if (_currentTab == 3) {
       return InfoPage();
