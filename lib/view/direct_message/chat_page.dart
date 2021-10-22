@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sky_mint/constants/colors.dart';
 import 'package:sky_mint/models/user_model.dart';
-import 'package:sky_mint/widgets/app_bar.dart';
 
 class ChatPage extends StatelessWidget {
   int userIndex;
@@ -17,7 +16,10 @@ class ChatPage extends StatelessWidget {
         centerTitle: false,
         title: buildAppBarText(selectedUser),
         actions: [
-          buildActionButton(Icons.more_vert, 28, () {}),
+          IconButton(
+            onPressed: () {},
+            icon: Icon(Icons.more_vert),
+          ),
         ],
       ),
     );
@@ -31,9 +33,9 @@ class ChatPage extends StatelessWidget {
               AssetImage("assets/profiles/${selectedUser.profilePhoto}"),
         ),
         SizedBox(
-          width: 14,
+          width: 16,
         ),
-        Text(selectedUser.name),
+        Center(child: Text(selectedUser.name)),
       ],
     );
   }

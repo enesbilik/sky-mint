@@ -11,11 +11,11 @@ class MyUser {
 }
 
 var listOfUser = [
-  MyUser("Umut", "Recebi ne zaman ekibe alıyoruz?", "pp_umut.jpg", "13:47", 2,
-      false),
+  MyUser("Umut", "Recebi ne zaman ekibe alıyoruz?", "pp_umut.jpg", "13:47", 0,
+      true),
   MyUser("İsmet", "Benim borcu ne zaman verirsin", "pp_ismet.jpg", "20:23", 0,
       true),
   MyUser(
-      "Samet", "knk sen gel kahven benden", "pp_samet.jpg", "23:12", 0, true),
+      "Samet", "knk sen gel kahven benden", "pp_samet.jpg", "23:12", 4, false),
   MyUser("Recep", "ekibe ne zaman giricem", "pp_recep.jpg", "19:25", 9, false),
 ];

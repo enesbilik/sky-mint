@@ -8,7 +8,7 @@ class FoodModel {
 }
 
 var tempFoodMenu = FoodModel(
-    "20.10.2021",
+    DateTime.now().toString(),
     "Çarşamba",
     'KAŞARLI DOMATES ÇORBA\nKIYMALI PATATES OTURTMA\nPENNE ARABİATTA\nVEJ. SÜTLÜ PATATES\nSEÇMELİ SALATA-SANDVİÇ BÜFE',
     'DÜĞÜN ÇORBA\nJULYEN DİLİMLİTAVUK\nPENNE ARABİATTA\nVEJ. SÜTLÜ PATATES\nSEÇMELİ SALATA-SANDVİÇ BÜFE');
