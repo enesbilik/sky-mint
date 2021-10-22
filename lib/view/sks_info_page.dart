@@ -1,5 +1,3 @@
-import 'dart:convert';
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:sky_mint/constants/colors.dart';
@@ -40,13 +38,13 @@ class _InfoPageState extends State<InfoPage> {
             height: deviceSize.height * 0.38,
             decoration: BoxDecoration(
               boxShadow: [
-      BoxShadow(
-        color: Color(0xff75C2FF).withOpacity(0.5),
-        spreadRadius: 1,
-        blurRadius: 7,
-        offset: Offset(0, 3), // changes position of shadow
-      ),
-    ],
+                BoxShadow(
+                  color: Color(0xff75C2FF).withOpacity(0.5),
+                  spreadRadius: 1,
+                  blurRadius: 7,
+                  offset: Offset(0, 3), // changes position of shadow
+                ),
+              ],
               borderRadius: BorderRadius.circular(30),
               gradient: const LinearGradient(
                 colors: foodContainerColors,
@@ -62,13 +60,13 @@ class _InfoPageState extends State<InfoPage> {
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(30),
               boxShadow: [
-      BoxShadow(
-        color: Color(0xff75C2FF).withOpacity(0.5),
-        spreadRadius: 1,
-        blurRadius: 7,
-        offset: Offset(0, 3), // changes position of shadow
-      ),
-    ],
+                BoxShadow(
+                  color: Color(0xff75C2FF).withOpacity(0.5),
+                  spreadRadius: 1,
+                  blurRadius: 7,
+                  offset: Offset(0, 3), // changes position of shadow
+                ),
+              ],
               gradient: const LinearGradient(
                 colors: foodContainerColors,
                 begin: Alignment.topLeft,
@@ -101,10 +99,9 @@ class _InfoPageState extends State<InfoPage> {
               Text(
                 foodMenu.date,
                 style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 20,
-                  fontFamily: "Poppins Bold"
-                ),
+                    color: Colors.white,
+                    fontSize: 20,
+                    fontFamily: "Poppins Bold"),
               ),
             ],
           ),
@@ -112,29 +109,51 @@ class _InfoPageState extends State<InfoPage> {
             child: PageView(
               controller: controller,
               children: [
-                Center(
-                  child: Text(
-                    foodMenu.dinnerFood,
-                    style: TextStyle(
-                      color: Colors.white,
-                      letterSpacing: 0.7,
-                      height: 1.5,
-                      fontSize: 17,
-                      fontFamily: "Poppins Bold"
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    Text(
+                      "Öğle Yemeği",
+                      style: TextStyle(
+                          color: Colors.white,
+                          letterSpacing: 0.7,
+                          height: 1.5,
+                          fontSize: 20,
+                          fontFamily: "Poppins Bold"),
                     ),
-                  ),
+                    Text(
+                      foodMenu.dinnerFood,
+                      style: TextStyle(
+                          color: Colors.white,
+                          letterSpacing: 0.7,
+                          height: 1.5,
+                          fontSize: 17,
+                          fontFamily: "Poppins Bold"),
+                    ),
+                  ],
                 ),
-                Center(
-                  child: Text(
-                    foodMenu.lunchFood,
-                    style: TextStyle(
-                      color: Colors.white,
-                      letterSpacing: 0.7,
-                      height: 1.5,
-                      fontSize: 17,
-                      fontFamily: "Poppins Bold"
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    Text(
+                      "Akşam Yemeği",
+                      style: TextStyle(
+                          color: Colors.white,
+                          letterSpacing: 0.7,
+                          height: 1.5,
+                          fontSize: 20,
+                          fontFamily: "Poppins Bold"),
                     ),
-                  ),
+                    Text(
+                      foodMenu.lunchFood,
+                      style: TextStyle(
+                          color: Colors.white,
+                          letterSpacing: 0.7,
+                          height: 1.5,
+                          fontSize: 17,
+                          fontFamily: "Poppins Bold"),
+                    ),
+                  ],
                 ),
               ],
             ),
