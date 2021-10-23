@@ -27,6 +27,7 @@ class _BuildPostState extends State<BuildPost> {
           trailing: buildPostMoreIcon(),
         ),
         buildPostImage(widget.post),
+        buildPostText(widget.post),
         buildPostIcons(),
         Divider(
           thickness: 0.2,
@@ -113,7 +114,7 @@ class _BuildPostState extends State<BuildPost> {
 
   Widget buildPostProfileImage(PostModel post) {
     return CircleAvatar(
-      backgroundImage: AssetImage(post.image ?? defaultImage),
+      backgroundImage: AssetImage(post.profilePhoto ?? defaultImage),
     );
   }
 
@@ -129,5 +130,27 @@ class _BuildPostState extends State<BuildPost> {
       post.title,
       style: TextStyle(color: Colors.black, fontFamily: "Poppins Bold"),
     );
+  }
+
+  Widget buildPostText(PostModel post) {
+    if (post.context != null) {
+      return Wrap(
+        direction: Axis.horizontal,
+        children: [
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 7),
+            child: Text(
+              post.context ?? "",
+              style: TextStyle(
+                fontSize: 17,
+                height: 1.3,
+                letterSpacing: 0.2,
+              ),
+            ),
+          ),
+        ],
+      );
+    }
+    return SizedBox();
   }
 }

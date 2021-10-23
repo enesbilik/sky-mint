@@ -65,9 +65,14 @@ class _MessagePageState extends State<MessagePage> {
         SizedBox(
           width: 2,
         ),
-        Text(
-          listOfUser[index].lastMessage,
-          style: TextStyle(fontFamily: "Poppins Light", fontSize: 15),
+        Wrap(
+          direction: Axis.horizontal,
+          children: [
+            Text(
+              listOfUser[index].lastMessage,
+              style: TextStyle(fontFamily: "Poppins Light", fontSize: 15),
+            ),
+          ],
         ),
       ],
     );

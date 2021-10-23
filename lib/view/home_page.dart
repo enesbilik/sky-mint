@@ -13,6 +13,13 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  PostModel tempPost = PostModel(
+    title: "İsmet",
+    subTitle: "Boğaz",
+    profilePhoto: "assets/profiles/pp_ismet.jpg",
+    context:
+        "Alacak nefesimiz olduğu sürece, soracak hesabımızda olacaktır elbet bir gün.",
+  );
   @override
   Widget build(BuildContext context) {
     Size deviceSize = MediaQuery.of(context).size;
@@ -23,7 +30,11 @@ class _HomePageState extends State<HomePage> {
           width: deviceSize.width,
           child: buildBody(),
         ),
-        floatingActionButton: buildFloatingActionButton(() {}),
+        floatingActionButton: buildFloatingActionButton(() {
+          setState(() {
+            listOfPost.insert(0, tempPost);
+          });
+        }),
       ),
     );
   }
