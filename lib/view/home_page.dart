@@ -1,6 +1,7 @@
 import 'dart:math';
 
 import 'package:circular_menu/circular_menu.dart';
+import 'package:expendable_fab/expendable_fab.dart';
 import 'package:flutter/material.dart';
 import 'package:sky_mint/constants/colors.dart';
 import 'package:sky_mint/models/post_model.dart';
@@ -24,7 +25,7 @@ class _HomePageState extends State<HomePage> {
           width: deviceSize.width,
           child: buildBody(),
         ),
-        floatingActionButton: buildCircularMenu(),
+        floatingActionButton: buildFabIcon(),
       ),
     );
   }
@@ -55,6 +56,7 @@ class _HomePageState extends State<HomePage> {
   }
 
   */
+  /*
   buildCircularMenu() {
     return CircularMenu(
       alignment: Alignment.bottomRight,
@@ -65,6 +67,27 @@ class _HomePageState extends State<HomePage> {
         CircularMenuItem(icon: Icons.share, color: Colors.green, onTap: () {}),
         CircularMenuItem(icon: Icons.gif, color: Colors.blue, onTap: () {}),
         CircularMenuItem(icon: Icons.photo, color: Colors.orange, onTap: () {}),
+      ],
+    );
+  }
+  */
+
+  buildFabIcon() {
+    return ExpendableFab(
+      distance: 75.0,
+      children: [
+        ActionButton(
+          icon: Icon(Icons.poll_outlined),
+          onPressed: () {},
+        ),
+        ActionButton(
+          onPressed: () {},
+          icon: Icon(Icons.photo_rounded),
+        ),
+        ActionButton(
+          onPressed: () {},
+          icon: Icon(Icons.text_fields),
+        ),
       ],
     );
   }
