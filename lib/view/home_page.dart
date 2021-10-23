@@ -5,6 +5,7 @@ import 'package:expendable_fab/expendable_fab.dart';
 import 'package:flutter/material.dart';
 import 'package:sky_mint/constants/colors.dart';
 import 'package:sky_mint/models/post_model.dart';
+import 'package:sky_mint/view/share_feed.dart';
 import 'package:sky_mint/widgets/post_widget.dart';
 
 class HomePage extends StatefulWidget {
@@ -46,32 +47,6 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-  /*
-  Widget buildFloatingActionButton(Function click) {
-    return FloatingActionButton(
-        child: Icon(Icons.add_box_outlined),
-        backgroundColor: softwhiteColor,
-        foregroundColor: darkColor,
-        onPressed: () => click());
-  }
-
-  */
-  /*
-  buildCircularMenu() {
-    return CircularMenu(
-      alignment: Alignment.bottomRight,
-      toggleButtonColor: darkColor,
-      toggleButtonBoxShadow: [],
-      toggleButtonAnimatedIconData: AnimatedIcons.add_event,
-      items: [
-        CircularMenuItem(icon: Icons.share, color: Colors.green, onTap: () {}),
-        CircularMenuItem(icon: Icons.gif, color: Colors.blue, onTap: () {}),
-        CircularMenuItem(icon: Icons.photo, color: Colors.orange, onTap: () {}),
-      ],
-    );
-  }
-  */
-
   buildFabIcon() {
     return ExpendableFab(
       distance: 75.0,
@@ -85,7 +60,14 @@ class _HomePageState extends State<HomePage> {
           icon: Icon(Icons.photo_rounded),
         ),
         ActionButton(
-          onPressed: () {},
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => ShareFeed(),
+              ),
+            );
+          },
           icon: Icon(Icons.text_fields),
         ),
       ],

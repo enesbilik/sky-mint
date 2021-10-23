@@ -11,6 +11,7 @@ class ShareFeed extends StatefulWidget {
 }
 
 class _ShareFeedState extends State<ShareFeed> {
+  int textLen = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -28,7 +29,6 @@ class _ShareFeedState extends State<ShareFeed> {
       ),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
-        // ignore: prefer_const_literals_to_create_immutables
         children: [
           buildTextField(),
           Spacer(),
@@ -90,6 +90,11 @@ class _ShareFeedState extends State<ShareFeed> {
 
   Widget buildTextField() {
     return TextField(
+      onChanged: (value) {
+        setState(() {
+          textLen = value.length;
+        });
+      },
       keyboardType: TextInputType.multiline,
       maxLines: 6,
       minLines: 6,
@@ -117,7 +122,9 @@ class _ShareFeedState extends State<ShareFeed> {
     return AppBar(
       iconTheme: IconThemeData(color: Colors.black),
       leading: IconButton(
-        onPressed: () {},
+        onPressed: () {
+          Navigator.pop(context);
+        },
         icon: Icon(Icons.close),
       ),
       backgroundColor: Colors.white,
@@ -131,9 +138,9 @@ class _ShareFeedState extends State<ShareFeed> {
   Widget buildShareButton() {
     return Padding(
       padding: const EdgeInsets.only(
-        right: 12,
-        top: 7,
-        bottom: 7,
+        right: 14,
+        top: 8,
+        bottom: 8,
       ),
       child: MaterialButton(
           textColor: Colors.white,
@@ -142,7 +149,7 @@ class _ShareFeedState extends State<ShareFeed> {
           ),
           minWidth: 100,
           color: darkColor,
-          onPressed: () {},
+          onPressed: textLen != 0 ? () {} : null,
           child: Text("Share", textScaleFactor: 1.12)),
     );
   }
