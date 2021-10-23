@@ -14,13 +14,6 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  PostModel tempPost = PostModel(
-    title: "İsmet",
-    subTitle: "Boğaz",
-    profilePhoto: "assets/profiles/pp_ismet.jpg",
-    context:
-        "Alacak nefesimiz olduğu sürece, soracak hesabımızda olacaktır elbet bir gün.",
-  );
   @override
   Widget build(BuildContext context) {
     Size deviceSize = MediaQuery.of(context).size;
@@ -52,6 +45,7 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
+  /*
   Widget buildFloatingActionButton(Function click) {
     return FloatingActionButton(
         child: Icon(Icons.add_box_outlined),
@@ -60,6 +54,7 @@ class _HomePageState extends State<HomePage> {
         onPressed: () => click());
   }
 
+  */
   buildCircularMenu() {
     return CircularMenu(
       alignment: Alignment.bottomRight,
