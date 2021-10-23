@@ -1,5 +1,6 @@
 import 'dart:math';
 
+import 'package:circular_menu/circular_menu.dart';
 import 'package:flutter/material.dart';
 import 'package:sky_mint/constants/colors.dart';
 import 'package:sky_mint/models/post_model.dart';
@@ -30,11 +31,7 @@ class _HomePageState extends State<HomePage> {
           width: deviceSize.width,
           child: buildBody(),
         ),
-        floatingActionButton: buildFloatingActionButton(() {
-          setState(() {
-            listOfPost.insert(0, tempPost);
-          });
-        }),
+        floatingActionButton: buildCircularMenu(),
       ),
     );
   }
@@ -61,5 +58,19 @@ class _HomePageState extends State<HomePage> {
         backgroundColor: softwhiteColor,
         foregroundColor: darkColor,
         onPressed: () => click());
+  }
+
+  buildCircularMenu() {
+    return CircularMenu(
+      alignment: Alignment.bottomRight,
+      toggleButtonColor: darkColor,
+      toggleButtonBoxShadow: [],
+      toggleButtonAnimatedIconData: AnimatedIcons.add_event,
+      items: [
+        CircularMenuItem(icon: Icons.share, color: Colors.green, onTap: () {}),
+        CircularMenuItem(icon: Icons.gif, color: Colors.blue, onTap: () {}),
+        CircularMenuItem(icon: Icons.photo, color: Colors.orange, onTap: () {}),
+      ],
+    );
   }
 }
