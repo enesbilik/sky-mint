@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_literals_to_create_immutables
+
 import 'package:flutter/material.dart';
 import 'package:sky_mint/constants/colors.dart';
 
@@ -14,28 +16,99 @@ class _ShareFeedState extends State<ShareFeed> {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: buildAppBar(),
-      body: Padding(
-        padding: const EdgeInsets.symmetric(
-          horizontal: 20.0,
-          vertical: 10,
-        ),
-        child: Column(
-          children: const [
-            TextField(
-              keyboardType: TextInputType.multiline,
-              maxLines: null,
-              minLines: 5,
-              decoration: InputDecoration(
-                prefixIcon: Padding(
-                  padding: EdgeInsets.only(bottom: 76.0),
-                  child: Icon(Icons.closed_caption_sharp),
+      body: buildBody(),
+    );
+  }
+
+  Widget buildBody() {
+    return Padding(
+      padding: const EdgeInsets.symmetric(
+        horizontal: 20.0,
+        vertical: 10,
+      ),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        // ignore: prefer_const_literals_to_create_immutables
+        children: [
+          buildTextField(),
+          Spacer(),
+          Container(
+            decoration: BoxDecoration(
+              border: Border(
+                top: BorderSide(
+                  color: darkColor.withOpacity(0.5),
                 ),
-                hintText: "Ne söylemek istersiniz?",
-                border: InputBorder.none,
               ),
+              color: Colors.white,
             ),
-          ],
+            padding: EdgeInsets.symmetric(
+              horizontal: 20,
+              vertical: 4,
+            ),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                IconButton(
+                  color: darkColor,
+                  icon: Icon(
+                    Icons.photo,
+                    size: 30,
+                  ),
+                  onPressed: () {},
+                ),
+                IconButton(
+                  color: darkColor,
+                  icon: Icon(
+                    Icons.gif_outlined,
+                    size: 34,
+                  ),
+                  onPressed: () {},
+                ),
+                IconButton(
+                  color: darkColor,
+                  icon: Icon(
+                    Icons.poll_outlined,
+                    size: 30,
+                  ),
+                  onPressed: () {},
+                ),
+                IconButton(
+                  color: darkColor,
+                  icon: Icon(
+                    Icons.location_on_outlined,
+                    size: 30,
+                  ),
+                  onPressed: () {},
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget buildTextField() {
+    return TextField(
+      keyboardType: TextInputType.multiline,
+      maxLines: 6,
+      minLines: 6,
+      maxLength: 240,
+      decoration: InputDecoration(
+        enabledBorder: UnderlineInputBorder(
+          borderSide: BorderSide(color: Colors.black45),
         ),
+        focusedBorder: UnderlineInputBorder(
+          borderSide: BorderSide(color: Colors.blue),
+        ),
+        border: UnderlineInputBorder(
+          borderSide: BorderSide(color: Colors.black45),
+        ),
+        icon: Padding(
+          padding: const EdgeInsets.only(bottom: 100.0),
+          child: Icon(Icons.drive_file_rename_outline_sharp),
+        ),
+        hintText: "Ne söylemek istersiniz?",
       ),
     );
   }
