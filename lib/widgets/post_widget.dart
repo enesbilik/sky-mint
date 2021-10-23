@@ -137,14 +137,17 @@ class _BuildPostState extends State<BuildPost> {
       return Wrap(
         direction: Axis.horizontal,
         children: [
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 7),
-            child: Text(
-              post.context ?? "",
-              style: TextStyle(
-                fontSize: 17,
-                height: 1.3,
-                letterSpacing: 0.2,
+          Container(
+            color: softwhiteColor,
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 7),
+              child: Text(
+                post.context ?? "",
+                style: TextStyle(
+                  fontSize: 17,
+                  height: 1.3,
+                  letterSpacing: 0.2,
+                ),
               ),
             ),
           ),

@@ -35,10 +35,24 @@ class _MainPageState extends State<MainPage> {
       child: DecoratedBox(
         decoration: BoxDecoration(
           color: softwhiteColor,
+          border: Border(
+            top: BorderSide(
+              color: Colors.white70,
+            ),
+          ),
+          boxShadow: const [
+            BoxShadow(
+              blurRadius: 6,
+              color: Colors.black54,
+              offset: Offset(1, 3),
+            )
+          ],
         ),
         child: SalomonBottomBar(
           unselectedItemColor: darkColor,
           currentIndex: _currentTab,
+          margin: EdgeInsets.all(12),
+
           //gapLocation: GapLocation.center,
           // notchSmoothness: NotchSmoothness.verySmoothEdge,
           //notchSmoothness: NotchSmoothness.softEdge,
@@ -62,7 +76,7 @@ class _MainPageState extends State<MainPage> {
             ),
             SalomonBottomBarItem(
               icon: Icon(Icons.info_outline),
-              title: Text("Info"),
+              title: Text("Bilgi"),
               selectedColor: darkColor,
             ),
             SalomonBottomBarItem(
@@ -89,20 +103,20 @@ class _MainPageState extends State<MainPage> {
   }
 
   getCurrentPage() {
-    if (_currentTab == 2) {
-      return HomePage();
-    }
-    if (_currentTab == 4) {
-      return MapPage();
-    }
     if (_currentTab == 0) {
       return CalendarPage();
     }
     if (_currentTab == 1) {
       return SearchPage();
     }
+    if (_currentTab == 2) {
+      return HomePage();
+    }
     if (_currentTab == 3) {
       return InfoPage();
+    }
+    if (_currentTab == 4) {
+      return MapPage();
     }
   }
 }
