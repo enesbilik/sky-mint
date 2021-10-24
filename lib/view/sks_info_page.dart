@@ -36,8 +36,8 @@ class _InfoPageState extends State<InfoPage> {
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           Container(
-            width: deviceSize.width * 0.9,
-            height: deviceSize.height * 0.38,
+            width: deviceSize.width * 0.85,
+            height: deviceSize.height * 0.35,
             decoration: BoxDecoration(
               boxShadow: [
                 BoxShadow(
@@ -54,11 +54,19 @@ class _InfoPageState extends State<InfoPage> {
                 end: Alignment.bottomRight,
               ),
             ),
-            child: buildFoodText(tempFoodMenu),
+            child: Stack(children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [Image.asset('assets/pin.png',width: 60,),],)
+              ,
+              Container(
+                margin: EdgeInsets.only(top:20),
+                child: buildFoodText(tempFoodMenu),)
+            ],)
           ),
           Container(
-            width: deviceSize.width * 0.9,
-            height: deviceSize.height * 0.36,
+            width: deviceSize.width * 0.85,
+            height: deviceSize.height * 0.35,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(30),
               boxShadow: [
@@ -130,7 +138,7 @@ class _InfoPageState extends State<InfoPage> {
                           letterSpacing: 0.7,
                           height: 1.5,
                           fontSize: 17,
-                          fontFamily: "Poppins Bold"),
+                          fontFamily: "Poppins"),
                     ),
                   ],
                 ),
@@ -153,7 +161,7 @@ class _InfoPageState extends State<InfoPage> {
                           letterSpacing: 0.7,
                           height: 1.5,
                           fontSize: 17,
-                          fontFamily: "Poppins Bold"),
+                          fontFamily: "Poppins"),
                     ),
                   ],
                 ),

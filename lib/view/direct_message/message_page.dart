@@ -15,6 +15,7 @@ class _MessagePageState extends State<MessagePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: softwhiteColor,
         appBar: buildAppBar(),
         body: buildBody(),
         floatingActionButton: FloatingActionButton(
@@ -60,7 +61,7 @@ class _MessagePageState extends State<MessagePage> {
       children: [
         Visibility(
           visible: listOfUser[index].isChecked,
-          child: Icon(Icons.check, size: 22),
+          child: Icon(Icons.check, size: 22,color: Colors.green,),
         ),
         SizedBox(
           width: 2,
@@ -70,7 +71,7 @@ class _MessagePageState extends State<MessagePage> {
           children: [
             Text(
               listOfUser[index].lastMessage,
-              style: TextStyle(fontFamily: "Poppins Light", fontSize: 15),
+              style: TextStyle(fontFamily: "Poppins", fontSize: 14,color: blackColor.withOpacity(0.5)),
             ),
           ],
         ),
@@ -86,7 +87,7 @@ class _MessagePageState extends State<MessagePage> {
         Text(
           listOfUser[index].lastMessageTime,
           style: TextStyle(
-              fontSize: 14, color: Colors.black87, fontFamily: "Poppins Light"),
+              fontSize: 14, color: blackColor, fontFamily: "Poppins Light"),
         ),
         SizedBox(
           height: 1,
