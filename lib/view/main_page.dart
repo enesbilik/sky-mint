@@ -43,7 +43,7 @@ class _MainPageState extends State<MainPage> {
           boxShadow: const [
             BoxShadow(
               blurRadius: 6,
-              color: Colors.black54,
+              color: Colors.black,
               offset: Offset(1, 3),
             )
           ],

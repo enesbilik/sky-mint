@@ -34,7 +34,7 @@ class _BuildPostState extends State<BuildPost> {
         Divider(
           thickness: 0.2,
           height: 0.2,
-          color: Colors.black,
+          color: blackColor.withOpacity(0.5),
         ),
       ],
     );
@@ -57,7 +57,7 @@ class _BuildPostState extends State<BuildPost> {
               icon: Icon(
                 !isStar ? Icons.star_border : Icons.star_outlined,
                 size: 32,
-                color: Colors.black,
+                color: blackColor,
               ),
             ),
             IconButton(
@@ -65,7 +65,7 @@ class _BuildPostState extends State<BuildPost> {
               icon: Icon(
                 Icons.messenger_outline,
                 size: 28,
-                color: Colors.black,
+                color: blackColor,
               ),
             ),
             IconButton(
@@ -73,7 +73,7 @@ class _BuildPostState extends State<BuildPost> {
               icon: Icon(
                 Icons.send,
                 size: 28,
-                color: Colors.black,
+                color: blackColor,
               ),
             ),
             Spacer(),
@@ -82,7 +82,7 @@ class _BuildPostState extends State<BuildPost> {
               icon: Icon(
                 Icons.arrow_drop_down_circle_outlined,
                 size: 32,
-                color: Colors.black,
+                color: blackColor,
               ),
             ),
           ],
@@ -108,7 +108,7 @@ class _BuildPostState extends State<BuildPost> {
       constraints: BoxConstraints(),
       icon: Icon(
         Icons.more_vert,
-        color: Colors.black,
+        color: blackColor,
       ),
       onPressed: () {},
     );
@@ -123,14 +123,14 @@ class _BuildPostState extends State<BuildPost> {
   Widget buildPostSubtitle(PostModel post) {
     return Text(
       post.subTitle,
-      style: TextStyle(color: kPrimaryColor, fontFamily: "Poppins Light"),
+      style: TextStyle(color: kPrimaryColor, fontFamily: "Poppins"),
     );
   }
 
   Widget buildPostTitle(PostModel post) {
     return Text(
       post.title,
-      style: TextStyle(color: Colors.black, fontFamily: "Poppins Bold"),
+      style: TextStyle(color: blackColor, fontFamily: "Poppins Bold"),
     );
   }
 
