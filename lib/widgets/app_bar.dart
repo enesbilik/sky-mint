@@ -17,7 +17,7 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
       elevation: 0.874,
       iconTheme: IconThemeData(color: darkColor),
       centerTitle: true,
-      backgroundColor: softwhiteColor,
+      backgroundColor: Colors.white,
       title: const Text(
         "Yıldızın\nSosyal Medyası",
         textAlign: TextAlign.center,
@@ -25,8 +25,8 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
       ),
       actions: [
         buildActionButton(Icons.notifications_none, 28, () {
-          Navigator.push(
-              context, MaterialPageRoute(builder: (context) => NotificationPage()));
+          Navigator.push(context,
+              MaterialPageRoute(builder: (context) => NotificationPage()));
         }),
         buildActionButton(Icons.messenger_outline_sharp, 26, () {
           Navigator.push(

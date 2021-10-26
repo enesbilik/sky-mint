@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:sky_mint/constants/colors.dart';
-import 'package:sky_mint/models/user_model.dart';
-import 'package:sky_mint/view/direct_message/chat_page.dart';
 import 'package:sky_mint/widgets/app_bar.dart';
 
 class NotificationPage extends StatefulWidget {
@@ -15,7 +13,7 @@ class _NotificationPageState extends State<NotificationPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: softwhiteColor,
+        backgroundColor: softwhiteColor,
         appBar: buildAppBar(),
         body: buildBody(),
         floatingActionButton: FloatingActionButton(
@@ -26,11 +24,13 @@ class _NotificationPageState extends State<NotificationPage> {
   }
 
   Widget buildBody() {
-    return NotificationListener<ScrollNotification>(child: Column(
-      children: [],
-    ),);
+    return NotificationListener<ScrollNotification>(
+      child: Column(
+        children: const [],
+      ),
+    );
   }
-  
+
   AppBar buildAppBar() {
     return AppBar(
       centerTitle: false,

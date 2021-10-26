@@ -22,7 +22,7 @@ class _BuildPostState extends State<BuildPost> {
       // ignore: prefer_const_literals_to_create_immutables
       children: [
         ListTile(
-          tileColor: softwhiteColor,
+          tileColor: Colors.white,
           title: buildPostTitle(widget.post),
           subtitle: buildPostSubtitle(widget.post),
           leading: buildPostProfileImage(widget.post),
@@ -42,7 +42,7 @@ class _BuildPostState extends State<BuildPost> {
 
   Widget buildPostIcons() {
     return Container(
-      color: softwhiteColor,
+      color: Colors.transparent,
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 10.0, vertical: 4),
         child: Row(
@@ -139,10 +139,10 @@ class _BuildPostState extends State<BuildPost> {
       return Wrap(
         direction: Axis.horizontal,
         children: [
-          Container(
-            color: softwhiteColor,
-            child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 7),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 7),
+            child: Align(
+              alignment: Alignment.topLeft,
               child: Text(
                 post.context ?? "",
                 style: TextStyle(

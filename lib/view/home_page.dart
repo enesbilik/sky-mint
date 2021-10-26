@@ -1,9 +1,7 @@
 import 'dart:math';
 
-import 'package:circular_menu/circular_menu.dart';
 import 'package:expendable_fab/expendable_fab.dart';
 import 'package:flutter/material.dart';
-import 'package:sky_mint/constants/colors.dart';
 import 'package:sky_mint/models/post_model.dart';
 import 'package:sky_mint/view/share_feed.dart';
 import 'package:sky_mint/widgets/post_widget.dart';
@@ -21,6 +19,7 @@ class _HomePageState extends State<HomePage> {
     Size deviceSize = MediaQuery.of(context).size;
     return SafeArea(
       child: Scaffold(
+        backgroundColor: Colors.white,
         body: SizedBox(
           height: deviceSize.height,
           width: deviceSize.width,

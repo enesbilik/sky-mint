@@ -30,7 +30,8 @@ List<PostModel> listOfPost = [
       title: "Büyük Ev",
       subTitle: "Orta Bahçe",
       profilePhoto: "assets/images/post_images/post_image3.jpeg",
-      image: "assets/images/post_images/post_image3.jpeg"),
+      image: "assets/images/post_images/post_image3.jpeg",
+      context: "Bugüne özel kahve indirimleriii"),
   PostModel(
       title: "YTU",
       subTitle: "Taş Bina",

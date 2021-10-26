@@ -2,6 +2,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:sky_mint/constants/colors.dart';
+import 'package:sky_mint/models/post_model.dart';
+import 'package:sky_mint/view/main_page.dart';
 
 class ShareFeed extends StatefulWidget {
   const ShareFeed({Key? key}) : super(key: key);
@@ -11,6 +13,7 @@ class ShareFeed extends StatefulWidget {
 }
 
 class _ShareFeedState extends State<ShareFeed> {
+  final _shareTextFieldController = TextEditingController();
   int textLen = 0;
   @override
   Widget build(BuildContext context) {
@@ -39,7 +42,7 @@ class _ShareFeedState extends State<ShareFeed> {
                   color: darkColor.withOpacity(0.5),
                 ),
               ),
-              color: Colors.white,
+              color: Colors.transparent,
             ),
             padding: EdgeInsets.symmetric(
               horizontal: 20,
@@ -90,6 +93,8 @@ class _ShareFeedState extends State<ShareFeed> {
 
   Widget buildTextField() {
     return TextField(
+      autocorrect: false,
+      controller: _shareTextFieldController,
       onChanged: (value) {
         setState(() {
           textLen = value.length;
@@ -149,7 +154,22 @@ class _ShareFeedState extends State<ShareFeed> {
           ),
           minWidth: 100,
           color: darkColor,
-          onPressed: textLen != 0 ? () {} : null,
+          onPressed: textLen != 0
+              ? () {
+                  var trial = PostModel(
+                    title: "Tamer",
+                    subTitle: "YTU",
+                    profilePhoto: "assets/images/post_images/ytu_pp.png",
+                    context: _shareTextFieldController.text,
+                  );
+                  setState(() {
+                    listOfPost.insert(0, trial);
+                  });
+                  Navigator.of(context).pushAndRemoveUntil(
+                      MaterialPageRoute(builder: (context) => MainPage()),
+                      (Route<dynamic> route) => false);
+                }
+              : null,
           child: Text("Share", textScaleFactor: 1.12)),
     );
   }

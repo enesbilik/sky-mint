@@ -34,7 +34,7 @@ class _MainPageState extends State<MainPage> {
     return SizedBox(
       child: DecoratedBox(
         decoration: BoxDecoration(
-          color: softwhiteColor,
+          color: Colors.white,
           border: Border(
             top: BorderSide(
               color: Colors.white70,
