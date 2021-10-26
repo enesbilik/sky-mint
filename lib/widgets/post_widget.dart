@@ -93,10 +93,18 @@ class _BuildPostState extends State<BuildPost> {
 
   Widget buildPostImage(PostModel post) {
     if (post.image != null) {
-      return Image.asset(
-        post.image!,
-        width: double.infinity,
-        fit: BoxFit.contain,
+      return GestureDetector(
+        onDoubleTap: () {
+          setState(() {
+            isStar = !isStar;
+            //debugPrint(isStar.toString());
+          });
+        },
+        child: Image.asset(
+          post.image!,
+          width: double.infinity,
+          fit: BoxFit.contain,
+        ),
       );
     }
     return SizedBox();

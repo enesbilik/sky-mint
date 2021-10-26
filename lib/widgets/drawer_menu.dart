@@ -5,6 +5,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:sky_mint/constants/colors.dart';
+import 'package:sky_mint/view/profile_page.dart';
 
 class MyDrawerMenu extends StatelessWidget {
   @override
@@ -15,103 +16,80 @@ class MyDrawerMenu extends StatelessWidget {
             150, 200), //bottomRight: Radius.elliptical(70, 200)
       ),
       child: Drawer(
-        child: ListView(
-          padding: const EdgeInsets.all(16.0),
-          children: [
-            const SafeArea(
-              child: CircleAvatar(
-                radius: 55,
-                backgroundColor: darkColor,
+        child: Material(
+          child: ListView(
+            padding: const EdgeInsets.all(16.0),
+            children: [
+              SafeArea(
                 child: CircleAvatar(
-                  radius: 50,
-                  backgroundImage: AssetImage("assets/eg1.png"),
+                  radius: 54,
+                  backgroundColor: darkColor.withOpacity(0.6),
+                  child: CircleAvatar(
+                    radius: 50,
+                    backgroundImage: AssetImage("assets/profiles/tamer.jpg"),
+                  ),
                 ),
               ),
-            ),
-            /*  UserAccountsDrawerHeader(
-              decoration: BoxDecoration(
-                shape: BoxShape.circle,
-                image: DecorationImage(
-                  image: AssetImage("assets/eg1.png"),
-                  fit: BoxFit.scaleDown,
-                  scale: 0.5,
+              ListTile(
+                onTap: () {},
+                title: Text(
+                  "Tamer Yılmaz",
+                  style: TextStyle(
+                      color: darkColor,
+                      fontSize: 18,
+                      fontFamily: "Poppins Bold"),
                 ),
-                //borderRadius: BorderRadius.all(Radius.circular(500)),
+                subtitle: Text(
+                  "tamer@yildiz.edu.tr",
+                  style: TextStyle(
+                      color: darkColor,
+                      fontSize: 16,
+                      fontFamily: "Poppins Light"),
+                ),
               ),
-              
-              accountName: Text(
-                "",
-              ),
-              accountEmail: Text(
-                "",
-              ),
-            ),*/
-            ListTile(
-              onTap: () {},
-              title: Text(
-                "Sky-Mint",
-                style: TextStyle(
-                    color: darkColor,
-                    fontSize: 18,
-                    fontFamily: "Poppins Bold"),
-              ),
-              subtitle: Text(
-                "admin@sky_mint.com",
-                style: TextStyle(
-                    color: darkColor,
-                    fontSize: 16,
-                    fontFamily: "Poppins Light"),
-              ),
-            ),
-            Divider(
-              color: darkColor,
-            ),
-            ListTile(
-              onTap: () {},
-              leading: Icon(
-                Icons.person_sharp,
-                size: 28,
+              Divider(
                 color: darkColor,
               ),
-              title: Text(
-                "Kullanıcı Profili",
-                style: TextStyle(
-                    fontSize: 18, color: darkColor, fontFamily: "Poppins"),
-              ),
-            ),
-            ListTile(
-              onTap: () {},
-              leading: Icon(
+              buildListTile(Icons.person_sharp, "Kullanıcı Profili", () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => ProfilePage(),
+                  ),
+                );
+              }),
+              buildListTile(
                 Icons.settings,
-                size: 28,
-                color: darkColor,
-              ),
-              title: Text(
                 "Ayarlar",
-                style: TextStyle(
-                  fontFamily: "Poppins",
-                  fontSize: 18,
-                  color: darkColor,
-                ),
+                () {},
               ),
-            ),
-            ListTile(
-              onTap: () {},
-              leading: Icon(
+              buildListTile(
                 Icons.power_settings_new_outlined,
-                size: 28,
-                color: darkColor,
-              ),
-              title: Text(
                 "Çıkış Yap",
-                style: TextStyle(
-                  fontFamily: "Poppins",
-                  fontSize: 18,
-                  color: darkColor,
-                ),
+                () {},
               ),
-            )
-          ],
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget buildListTile(IconData icon, String title, VoidCallback click) {
+    return ListTile(
+      hoverColor: Colors.yellowAccent,
+      onTap: click,
+      leading: Icon(
+        icon,
+        size: 28,
+        color: darkColor,
+      ),
+      title: Text(
+        title,
+        style: TextStyle(
+          fontFamily: "Poppins",
+          fontSize: 18,
+          color: darkColor,
         ),
       ),
     );

@@ -2,7 +2,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 import 'package:sky_mint/constants/colors.dart';
-import 'package:sky_mint/models/user_model.dart';
 
 class ProfilePage extends StatefulWidget {
   const ProfilePage({Key? key}) : super(key: key);
@@ -24,91 +23,22 @@ class _ProfilePageState extends State<ProfilePage> {
 }
 
 Widget buildBody(BuildContext context) {
+  var deviceSize = MediaQuery.of(context).size;
   return SafeArea(
-    child: SingleChildScrollView(
+    child: SizedBox(
+      height: deviceSize.height,
+      width: deviceSize.width,
       child: Column(
         children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              IconButton(
-                onPressed: () {},
-                icon: Icon(Icons.arrow_back),
-                iconSize: 35,
-                color: softwhiteColor,
-              ),
-              IconButton(
-                onPressed: () {},
-                icon: Icon(Icons.edit),
-                iconSize: 30,
-                color: softwhiteColor,
-              )
-            ],
-          ),
-          Padding(
-            padding: EdgeInsets.fromLTRB(5, 2, 5, 10),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              mainAxisSize: MainAxisSize.max,
-              children: [
-                Column(
-                  // ignore: prefer_const_literals_to_create_immutables
-                  children: [
-                    Text(
-                      "Takip Edilen",
-                      style: TextStyle(
-                          color: softwhiteColor,
-                          fontFamily: "Poppins Bold",
-                          fontSize: 18),
-                    ),
-                    SizedBox(
-                      height: 5,
-                    ),
-                    Text(
-                      "3,240",
-                      style: TextStyle(
-                          color: softwhiteColor,
-                          fontFamily: "Poppins",
-                          fontSize: 20),
-                    )
-                  ],
-                ),
-                CircleAvatar(
-                  minRadius: 30,
-                  maxRadius: 50,
-                  backgroundImage: AssetImage("assets/eg2.png"),
-                ),
-                Column(
-                  // ignore: prefer_const_literals_to_create_immutables
-                  children: [
-                    Text(
-                      "Takipçiler",
-                      style: TextStyle(
-                          color: softwhiteColor,
-                          fontFamily: "Poppins Bold",
-                          fontSize: 18),
-                    ),
-                    SizedBox(
-                      height: 5,
-                    ),
-                    Text(
-                      "2,780",
-                      style: TextStyle(
-                          color: softwhiteColor,
-                          fontFamily: "Poppins",
-                          fontSize: 20),
-                    )
-                  ],
-                ),
-              ],
-            ),
-          ),
+          buildAppBar(context),
+          buildInfoContainer(),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
+            // ignore: prefer_const_literals_to_create_immutables
             children: [
               Text(
                 // ignore: unnecessary_string_interpolations
-                "${listOfUser[3].name}",
+                "Tamer Yılmaz",
                 textScaleFactor: 1.3,
                 style: TextStyle(
                     fontFamily: "Poppins Bold", color: softwhiteColor),
@@ -180,7 +110,7 @@ Widget buildBody(BuildContext context) {
             ],
           ),
           SizedBox(
-            height: 10,
+            height: 16,
           ),
           Container(
             height: 500,
@@ -196,6 +126,84 @@ Widget buildBody(BuildContext context) {
   );
 }
 
-AppBar buildAppBar(BuildContext context) {
-  return AppBar();
+Padding buildInfoContainer() {
+  return Padding(
+    padding: EdgeInsets.fromLTRB(5, 2, 5, 10),
+    child: Row(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      mainAxisSize: MainAxisSize.max,
+      children: [
+        Column(
+          // ignore: prefer_const_literals_to_create_immutables
+          children: [
+            Text(
+              "Takip Edilen",
+              style: TextStyle(
+                  color: softwhiteColor,
+                  fontFamily: "Poppins Bold",
+                  fontSize: 18),
+            ),
+            SizedBox(
+              height: 5,
+            ),
+            Text(
+              "3,240",
+              style: TextStyle(
+                  color: softwhiteColor, fontFamily: "Poppins", fontSize: 20),
+            )
+          ],
+        ),
+        CircleAvatar(
+          minRadius: 30,
+          maxRadius: 50,
+          backgroundImage: AssetImage("assets/profiles/tamer.jpg"),
+        ),
+        Column(
+          // ignore: prefer_const_literals_to_create_immutables
+          children: [
+            Text(
+              "Takipçiler",
+              style: TextStyle(
+                  color: softwhiteColor,
+                  fontFamily: "Poppins Bold",
+                  fontSize: 18),
+            ),
+            SizedBox(
+              height: 5,
+            ),
+            Text(
+              "2,780",
+              style: TextStyle(
+                  color: softwhiteColor, fontFamily: "Poppins", fontSize: 20),
+            )
+          ],
+        ),
+      ],
+    ),
+  );
+}
+
+Padding buildAppBar(BuildContext context) {
+  return Padding(
+    padding: const EdgeInsets.symmetric(horizontal: 4.0),
+    child: Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        IconButton(
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          icon: Icon(Icons.arrow_back),
+          iconSize: 32,
+          color: softwhiteColor,
+        ),
+        IconButton(
+          onPressed: () {},
+          icon: Icon(Icons.edit),
+          iconSize: 28,
+          color: softwhiteColor,
+        )
+      ],
+    ),
+  );
 }

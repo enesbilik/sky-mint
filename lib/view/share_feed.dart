@@ -159,7 +159,7 @@ class _ShareFeedState extends State<ShareFeed> {
                   var trial = PostModel(
                     title: "Tamer",
                     subTitle: "YTU",
-                    profilePhoto: "assets/images/post_images/ytu_pp.png",
+                    profilePhoto: "assets/profiles/tamer.jpg",
                     context: _shareTextFieldController.text,
                   );
                   setState(() {
