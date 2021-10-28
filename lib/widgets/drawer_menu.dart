@@ -2,6 +2,8 @@
 
 //import 'dart:html';
 
+import 'dart:io';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:sky_mint/constants/colors.dart';
@@ -66,7 +68,9 @@ class MyDrawerMenu extends StatelessWidget {
               buildListTile(
                 Icons.power_settings_new_outlined,
                 "Çıkış Yap",
-                () {},
+                () {
+                  exit(0);
+                },
               ),
             ],
           ),
