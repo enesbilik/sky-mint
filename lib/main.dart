@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sky_mint/view/profile_page.dart';
 import 'view/main_page.dart';
 
 void main() {
@@ -13,7 +14,7 @@ class MyApp extends StatelessWidget {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'SkyMint',
-      home: MainPage(),
+      home: ProfilePage(),
     );
   }
 }

@@ -7,7 +7,7 @@ import 'dart:io';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:sky_mint/constants/colors.dart';
-import 'package:sky_mint/view/profile_page.dart';
+import 'package:sky_mint/view/profile_page2.dart';
 
 class MyDrawerMenu extends StatelessWidget {
   @override
@@ -56,7 +56,7 @@ class MyDrawerMenu extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => ProfilePage(),
+                    builder: (context) => ProfilePage2(),
                   ),
                 );
               }),

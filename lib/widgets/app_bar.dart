@@ -19,7 +19,7 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
       centerTitle: true,
       backgroundColor: Colors.white,
       title: const Text(
-        "Yıldızın\nSosyal Medyası",
+        "şeyma köse",
         textAlign: TextAlign.center,
         style: TextStyle(fontFamily: "Pattaya", color: darkColor),
       ),
