@@ -71,7 +71,10 @@ class _MainPageState extends State<MainPage> {
             ),
             SalomonBottomBarItem(
               icon: Icon(Icons.home),
-              title: Text("Anasayfa"),
+              title: Text(
+                "Anasayfa",
+                style: TextStyle(fontSize: 11),
+              ),
               selectedColor: darkColor,
             ),
             SalomonBottomBarItem(

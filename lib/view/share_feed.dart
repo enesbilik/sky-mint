@@ -157,7 +157,7 @@ class _ShareFeedState extends State<ShareFeed> {
           onPressed: textLen != 0
               ? () {
                   var trial = PostModel(
-                    title: "Tamer",
+                    title: "Tamer Yılmaz",
                     subTitle: "YTU",
                     profilePhoto: "assets/profiles/tamer.jpg",
                     context: _shareTextFieldController.text,
