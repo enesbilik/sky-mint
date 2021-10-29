@@ -11,7 +11,7 @@ class ProfilePage extends StatefulWidget {
 }
 
 class _ProfilePageState extends State<ProfilePage> {
-  var pressAttention = false;
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -127,53 +127,63 @@ Widget buildInfoContainer(BuildContext context) {
 }
 
 Row buildRowButton() {
+  var pressAttention = false;
   return Row(
     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
     children: [
       ElevatedButton(
-        onPressed: () {},
+        onPressed: () {
+        },
         child: Text("Görsel",
             style: TextStyle(
                 fontFamily: "Poppins", fontSize: 16, color: darkColor)),
         style: ElevatedButton.styleFrom(
-          shadowColor: softwhiteColor,
+          shadowColor: softwhiteColor.withOpacity(0.3),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.all(Radius.circular(30)),
           ),
           minimumSize: Size(110, 30),
-          primary: softwhiteColor,
+          //primary: softwhiteColor,
           elevation: 5,
-          //primary: pressAttention ? kPrimaryColor : darkColor,
+          primary: pressAttention ? darkColor : softwhiteColor,
         ),
       ),
       ElevatedButton(
-        onPressed: () {},
+        onPressed: () {
+        },
         child: Text(
           "Yazı",
-          style: TextStyle(fontFamily: "Poppins", fontSize: 16),
+          style: TextStyle(fontFamily: "Poppins", fontSize: 16,color: softwhiteColor),
         ),
         style: ElevatedButton.styleFrom(
+          side: BorderSide(width: 1.0, color: softwhiteColor,),
+          shadowColor: Colors.white.withOpacity(0),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.all(Radius.circular(30)),
           ),
           minimumSize: Size(110, 30),
           elevation: 5,
-          //primary: pressAttention ? kPrimaryColor : darkColor,
+         // primary: darkColor,
+          primary: pressAttention ? softwhiteColor : darkColor,
         ),
       ),
       ElevatedButton(
-        onPressed: () {},
+        onPressed: () {
+        },
         child: Text(
           "Anket",
-          style: TextStyle(fontFamily: "Poppins", fontSize: 16),
+          style: TextStyle(fontFamily: "Poppins", fontSize: 16,color: softwhiteColor),
         ),
         style: ElevatedButton.styleFrom(
+          side: BorderSide(width: 1.0, color: softwhiteColor,),
+          shadowColor: Colors.white.withOpacity(0),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.all(Radius.circular(30)),
           ),
           minimumSize: Size(110, 30),
           elevation: 5,
-          //primary: pressAttention ? kPrimaryColor : darkColor,
+          //primary: darkColor,
+          primary: pressAttention ? softwhiteColor : darkColor,
         ),
       ),
     ],
