@@ -31,6 +31,12 @@ List<PostModel> listOfPost = [
       context:
           "Kendimi sürekli kulüpler vadisinde buluyorum. Biraz da derslere mi girsem acaba?"),
   PostModel(
+      title: "Eymen Alpat",
+      subTitle: "",
+      profilePhoto: "assets/images/post_images/eymen_pp.png",
+      context:
+          "Umarım bu toplantı sonunda 'Yapın Çocuklar' cevabını alır ve ~36000 yıldızlıya ulaşabiliriz.\n\n#KulüpleriyleLiderYTU\n#ArGedeLiderYTU\nSosyalMedyasıylaLiderYTU"),
+  PostModel(
       title: "Büyük Ev",
       subTitle: "Büyük Ev",
       profilePhoto: "assets/images/post_images/post_image3.jpeg",
@@ -148,6 +154,12 @@ List<PostModel> listOfPost = [
       image: "assets/images/post_images/mint_post_image (3).jpg",
       context:
           "Sayın Rektörümüz Prof. Dr. Tamer Yılmaz ile kulüp yönetimi olarak bir buluşma gerçekleştirdik.\n\nKulüp etkinlikleri, projelerimiz ve yüz yüze eğitim süreci hakkında konuştuğumuz buluşmaya imkan sağladığı için kendisine teşekkür ediyoruz.\n\n#EğitimdeLiderYTÜ #KulüpleriyleLiderYTÜ"),
+  PostModel(
+      title: "İsmet Güngör",
+      subTitle: "Yalova",
+      profilePhoto: "assets/profiles/pp_ismet.jpg",
+      image: "assets/profiles/pp_ismet.jpg",
+      context: "#tbt"),
   PostModel(
       title: "Tamer Yılmaz",
       subTitle: "Yıldız Teknik Üniversitesi",

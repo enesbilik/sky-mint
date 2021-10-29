@@ -11,12 +11,12 @@ class MyUser {
 }
 
 var listOfUser = [
-  MyUser("Umut", "Recebi ne zaman ekibe alıyoruz?", "pp_umut.jpg", "13:47", 0,
-      true),
-  MyUser("İsmet", "Benim borcu ne zaman verirsin", "pp_ismet.jpg", "20:23", 0,
-      true),
   MyUser(
-      "Samet", "knk sen gel kahven benden", "pp_samet.jpg", "23:12", 4, false),
-  MyUser(
-      "Amaç Güvensan", "ekibe ne zaman giricem", "eg2.png", "19:25", 9, false),
+      "Umut Güzel", "#KulüpleriyleLiderYTU", "pp_umut.jpg", "13:47", 0, true),
+  MyUser("İsmet Güngör", "Projeye Start'ı veriyoruz 🔥🔥", "pp_ismet.jpg",
+      "20:23", 0, true),
+  MyUser("Bilgi İşlem", "Usis'i tarihe gömdük 👌", "pp_bidb_siyah.png", "23:12",
+      4, false),
+  MyUser("M. Amaç Güvensan", "Pazartesi ofisinizde görüşmek üzere",
+      "pp_mag.jpg", "19:25", 2, false),
 ];
