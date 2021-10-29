@@ -28,12 +28,22 @@ class _BuildPostState extends State<BuildPost> {
           leading: buildPostProfileImage(widget.post),
           trailing: buildPostMoreIcon(),
         ),
+        Divider(
+          thickness: 0.1,
+          height: 0.1,
+          color: blackColor.withOpacity(0.5),
+        ),
         buildPostImage(widget.post),
+        Divider(
+          thickness: 0.1,
+          height: 0.1,
+          color: blackColor.withOpacity(0.5),
+        ),
         buildPostText(widget.post),
         buildPostIcons(),
         Divider(
-          thickness: 0.2,
-          height: 0.2,
+          thickness: 0.4,
+          height: 0.4,
           color: blackColor.withOpacity(0.5),
         ),
       ],
@@ -123,8 +133,25 @@ class _BuildPostState extends State<BuildPost> {
   }
 
   Widget buildPostProfileImage(PostModel post) {
-    return CircleAvatar(
-      backgroundImage: AssetImage(post.profilePhoto ?? defaultImage),
+    return DecoratedBox(
+      decoration: BoxDecoration(
+        shape: BoxShape.circle,
+        border: Border.all(color: Colors.black87, width: 1),
+      ),
+      child: Padding(
+        padding: const EdgeInsets.all(1),
+        child: ClipRRect(
+          borderRadius: BorderRadius.circular(360),
+          child: CircleAvatar(
+            backgroundColor: softwhiteColor,
+            child: Image.asset(
+              post.profilePhoto ?? defaultImage,
+              fit: BoxFit.scaleDown,
+            ),
+            //backgroundImage: AssetImage(post.profilePhoto ?? defaultImage, ),
+          ),
+        ),
+      ),
     );
   }
 
