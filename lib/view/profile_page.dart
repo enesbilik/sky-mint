@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sky_mint/constants/colors.dart';
+import 'package:sky_mint/models/post_model.dart';
+import 'package:sky_mint/widgets/post_widget.dart';
 
 class ProfilePage extends StatefulWidget {
   const ProfilePage({Key? key}) : super(key: key);
@@ -9,6 +11,18 @@ class ProfilePage extends StatefulWidget {
 }
 
 class _ProfilePageState extends State<ProfilePage> {
+  List<PostModel> listOfTamerPosts = [];
+
+  @override
+  void initState() {
+    listOfTamerPosts.addAll(
+      listOfPost.where(
+        (post) => post.title == "Tamer Yılmaz" && post.image != null,
+      ),
+    );
+    super.initState();
+  }
+
   var folTextStyle = TextStyle(
     color: softwhiteColor,
     fontFamily: "Poppins Bold",
@@ -51,67 +65,83 @@ class _ProfilePageState extends State<ProfilePage> {
 
   Widget buildBody(Size deviceSize) {
     return SafeArea(
+      bottom: false,
+      child: SizedBox(
+        width: deviceSize.width,
+        height: deviceSize.height,
+        child: Column(
+          children: [
+            buildTopContainer(),
+            buildUserContentContainer(),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget buildTopContainer() {
+    return Container(
+      decoration: BoxDecoration(
+        color: darkColor,
+      ),
+      height: 250,
       child: Column(
         children: [
-          Container(
-            decoration: BoxDecoration(
-              color: Colors.cyan,
-            ),
-            height: deviceSize.height * 0.27,
-            child: Column(
-              children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    buildFolText("Takip Edilen", "3,240"),
-                    buildProfileImage(),
-                    buildFolText("Takipçiler", "2,235"),
-                  ],
-                ),
-                SizedBox(
-                  height: 10,
-                ),
-                buildNameContainer(),
-                SizedBox(
-                  height: 10,
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    buildChoseButton("Görsel"),
-                    buildChoseButton("Yazı"),
-                    buildChoseButton("Anket"),
-                  ],
-                ),
-              ],
-            ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              buildFolText("Takip Edilen", "3,240"),
+              buildProfileImage(),
+              buildFolText("Takipçiler", "2,235"),
+            ],
           ),
-          Container(
-            height: double.infinity,
-            decoration: BoxDecoration(
-              color: Colors.yellowAccent,
-            ),
+          SizedBox(
+            height: 10,
+          ),
+          buildNameContainer(),
+          SizedBox(
+            height: 10,
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              buildChoseButton("Görsel  (5)"),
+              buildChoseButton("Yazı  (1)"),
+              buildChoseButton("Anket  (3)"),
+            ],
           ),
         ],
       ),
     );
   }
 
-  Widget buildChoseButton(String text) {
-    return ElevatedButton(
-      onPressed: () {},
-      child: Text(text,
-          style:
-              TextStyle(fontFamily: "Poppins", fontSize: 16, color: darkColor)),
-      style: ElevatedButton.styleFrom(
-        shadowColor: softwhiteColor,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.all(Radius.circular(30)),
+  Widget buildUserContentContainer() {
+    return Expanded(
+      child: Container(
+        decoration: BoxDecoration(
+          color: softwhiteColor,
         ),
-        minimumSize: Size(110, 30),
-        primary: softwhiteColor,
-        elevation: 5,
-        //primary: pressAttention ? kPrimaryColor : darkColor,
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 8.0),
+          child: ListView.builder(
+            physics: const AlwaysScrollableScrollPhysics(),
+            itemCount: listOfTamerPosts.length,
+            itemBuilder: (BuildContext context, int index) {
+              return BuildPost(listOfTamerPosts[index]);
+            },
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget buildChoseButton(String text) {
+    return Text(
+      text,
+      style: TextStyle(
+        fontFamily: "Poppins",
+        fontSize: 16,
+        color: softwhiteColor,
       ),
     );
   }
@@ -145,9 +175,12 @@ class _ProfilePageState extends State<ProfilePage> {
         horizontal: 18,
       ),
       child: CircleAvatar(
-        minRadius: 45,
-        maxRadius: 50,
-        backgroundImage: AssetImage("assets/profiles/tamer.jpg"),
+        backgroundColor: Colors.black.withOpacity(0.1),
+        radius: 60,
+        child: CircleAvatar(
+          radius: 55,
+          backgroundImage: AssetImage("assets/profiles/tamer.jpg"),
+        ),
       ),
     );
   }
