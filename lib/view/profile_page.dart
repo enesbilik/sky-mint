@@ -9,7 +9,6 @@ class ProfilePage extends StatefulWidget {
 }
 
 class _ProfilePageState extends State<ProfilePage> {
-<<<<<<< HEAD
   var folTextStyle = TextStyle(
     color: softwhiteColor,
     fontFamily: "Poppins Bold",
@@ -22,9 +21,6 @@ class _ProfilePageState extends State<ProfilePage> {
     fontSize: 20,
   );
 
-=======
-  
->>>>>>> 240c97f44bf34cf709fc6cc7e3bb6d3ec5e864af
   @override
   Widget build(BuildContext context) {
     Size deviceSize = MediaQuery.of(context).size;
@@ -101,7 +97,6 @@ class _ProfilePageState extends State<ProfilePage> {
     );
   }
 
-<<<<<<< HEAD
   Widget buildChoseButton(String text) {
     return ElevatedButton(
       onPressed: () {},
@@ -112,35 +107,12 @@ class _ProfilePageState extends State<ProfilePage> {
         shadowColor: softwhiteColor,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.all(Radius.circular(30)),
-=======
-Row buildRowButton() {
-  var pressAttention = false;
-  return Row(
-    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-    children: [
-      ElevatedButton(
-        onPressed: () {
-        },
-        child: Text("Görsel",
-            style: TextStyle(
-                fontFamily: "Poppins", fontSize: 16, color: darkColor)),
-        style: ElevatedButton.styleFrom(
-          shadowColor: softwhiteColor.withOpacity(0.3),
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.all(Radius.circular(30)),
-          ),
-          minimumSize: Size(110, 30),
-          //primary: softwhiteColor,
-          elevation: 5,
-          primary: pressAttention ? darkColor : softwhiteColor,
->>>>>>> 240c97f44bf34cf709fc6cc7e3bb6d3ec5e864af
         ),
         minimumSize: Size(110, 30),
         primary: softwhiteColor,
         elevation: 5,
         //primary: pressAttention ? kPrimaryColor : darkColor,
       ),
-<<<<<<< HEAD
     );
   }
 
@@ -162,63 +134,6 @@ Row buildRowButton() {
             color: softwhiteColor,
             fontSize: 18,
           ),
-=======
-      ElevatedButton(
-        onPressed: () {
-        },
-        child: Text(
-          "Yazı",
-          style: TextStyle(fontFamily: "Poppins", fontSize: 16,color: softwhiteColor),
-        ),
-        style: ElevatedButton.styleFrom(
-          side: BorderSide(width: 1.0, color: softwhiteColor,),
-          shadowColor: Colors.white.withOpacity(0),
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.all(Radius.circular(30)),
-          ),
-          minimumSize: Size(110, 30),
-          elevation: 5,
-         // primary: darkColor,
-          primary: pressAttention ? softwhiteColor : darkColor,
-        ),
-      ),
-      ElevatedButton(
-        onPressed: () {
-        },
-        child: Text(
-          "Anket",
-          style: TextStyle(fontFamily: "Poppins", fontSize: 16,color: softwhiteColor),
-        ),
-        style: ElevatedButton.styleFrom(
-          side: BorderSide(width: 1.0, color: softwhiteColor,),
-          shadowColor: Colors.white.withOpacity(0),
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.all(Radius.circular(30)),
-          ),
-          minimumSize: Size(110, 30),
-          elevation: 5,
-          //primary: darkColor,
-          primary: pressAttention ? softwhiteColor : darkColor,
-        ),
-      ),
-    ],
-  );
-}
-
-Widget buildAppBar(BuildContext context) {
-  return Padding(
-    padding: const EdgeInsets.symmetric(horizontal: 4.0),
-    child: Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        IconButton(
-          onPressed: () {
-            Navigator.pop(context);
-          },
-          icon: Icon(Icons.arrow_back),
-          iconSize: 32,
-          color: softwhiteColor,
->>>>>>> 240c97f44bf34cf709fc6cc7e3bb6d3ec5e864af
         ),
       ],
     );
