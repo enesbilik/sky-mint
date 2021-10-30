@@ -17,7 +17,7 @@ class _ProfilePageState extends State<ProfilePage> {
   void initState() {
     listOfTamerPosts.addAll(
       listOfPost.where(
-        (post) => post.title == "Tamer Yılmaz" && post.image != null,
+        (post) => post.title == "Tamer Yılmaz",
       ),
     );
     super.initState();

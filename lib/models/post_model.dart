@@ -21,7 +21,7 @@ List<PostModel> listOfPost = [
     subTitle: "",
     profilePhoto: "assets/profiles/tamer.jpg",
     context:
-        "Değerli öğrencilerim ve akademisyen arkadaşlarım, 2020-21 Akademik Yılımız, 5 Ekim’de başladı. Üniversitemize ve tüm yüksek öğretim camiasına hayırlı olmasını diliyorum.\n\n#EğitimdeLiderYTÜ",
+        "Değerli öğrencilerim ve akademisyen arkadaşlarım, 2021-22 Akademik Yılımız, 4 Ekim’de başladı. Üniversitemize ve tüm yüksek öğretim camiasına hayırlı olmasını diliyorum.\n\n#EğitimdeLiderYTÜ",
   ),
   PostModel(
       title: "Tamer Yılmaz",
