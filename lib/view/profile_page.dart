@@ -159,7 +159,7 @@ class _ProfilePageState extends State<ProfilePage> {
           ),
         ),
         Text(
-          "#someting",
+          "#KulüpleriyleLiderYTÜ",
           style: TextStyle(
             color: softwhiteColor,
             fontSize: 18,
